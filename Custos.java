@@ -2,9 +2,11 @@ public class Custos {
     private String nomeCusto;
     private int valorCusto;
 
-    public Custos(String nomeCusto, int valorCusto) {
+    public Custos(String nomeCusto, int valorCusto, Apartamento Apartamento) {
         this.nomeCusto = nomeCusto;
         this.valorCusto = valorCusto;
+        Apartamento.setCusto(this); // Implementação para que a assim que um "Custo" seja criado, seja necessário colocar o apartamento que ele vai colocar
+        
     }
 
     public String getNomeCusto() {
