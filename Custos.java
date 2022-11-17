@@ -13,6 +13,12 @@ public class Custos {
     public int getValorCusto() {
         return valorCusto;
     }
+    public void setNomeCusto(String nomeCusto) {
+        this.nomeCusto = nomeCusto;
+    }
+    public void setValorCusto(int valorCusto) {
+        this.valorCusto = valorCusto;
+    }
     
 }
 
