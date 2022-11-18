@@ -13,6 +13,8 @@ public class Main {
     
     Custos moradia = new Custos("Aluguel", 500, ap1);
     Custos Comodidade = new Custos("Net/Agua/Luz", 200, ap1);
+
+    // TESTE DOS MÉTODOS DA CLASSE APARTAMENTO
      
     ap1.Exibirmoradores();
 
