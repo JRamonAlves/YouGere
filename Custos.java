@@ -1,6 +1,7 @@
 public class Custos {
     private String nomeCusto;
     private int valorCusto;
+    private Apartamento custosAp;
 
     public Custos(String nomeCusto, int valorCusto) {
         this.nomeCusto = nomeCusto;
