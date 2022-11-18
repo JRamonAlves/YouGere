@@ -10,7 +10,7 @@ public class Apartamento {
     private double DespesaFixa = 0; // Total das despesas fixas que a moradia possui.
     private double DespesaAdicional = 0; // Total das despesas adicionais do mêsm, do periodo de tempo determinado.
 
-        //SETS E GETS DAS DESPESAS
+        //SETS E GETS DAS DESPESAS teste
 
     public void setDespesaTotal(double despesaTotal) {
         DespesaTotal = despesaTotal;
