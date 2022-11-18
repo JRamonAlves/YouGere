@@ -102,6 +102,8 @@ public class Apartamento {
             System.out.println("\t" +i+"º "+ e.getNome()); // Mostra nome de cada colega de quarto cadastrado.
             i += 1;
         }
+        
+        System.out.println("");
     }
 
     public void ExibirCustos(){
@@ -121,7 +123,7 @@ public class Apartamento {
         }
 
         // EXIBE A DESPESA TOTAL 
-        System.out.println("-------------------------------\nDESPESA TOTAL: R$" +soma+"\n"+"DESPESA FIXA: R$" +DespesaFixa+"\n"+"DESPESA ADICIONAL: R$" +DespesaAdicional+"\n");
+        System.out.println("\nDESPESA TOTAL: R$" +soma+"\n"+"DESPESA FIXA: R$" +DespesaFixa+"\n"+"DESPESA ADICIONAL: R$" +DespesaAdicional+"\n");
     }
 
     public void ExibirTarefas() {
