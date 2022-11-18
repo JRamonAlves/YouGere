@@ -8,6 +8,7 @@ public class Custos {
         Apartamento.setCusto(this); // Implementação para que a assim que um "Custo" seja criado, seja necessário colocar o apartamento que ele vai colocar
         
     }
+        //SET E GETS PADRÕES
 
     public String getNomeCusto() {
         return nomeCusto;
