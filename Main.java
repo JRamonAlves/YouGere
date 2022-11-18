@@ -18,6 +18,8 @@ public class Main {
      
     ap1.Exibirmoradores();
 
-    ap1.ExibirCustos();
+    ap1.setCusto(moradia);
+    ap1.setCusto(Comodidade);
+    // ap1.ExibirCustos();
     }
 }

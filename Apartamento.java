@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Apartamento {
     
-    private  ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > (); // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
-    private ArrayList <Custos> Custos = new ArrayList< > (); // Lista com os custos do apartamento. 
-    private ArrayList <Tarefa> Task = new ArrayList< > (); // Lista com as tarefas do apartamento que precisam ser feitas.
+    private ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > (); // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
+    private ArrayList <Custos> Custos = new ArrayList < > (); // Lista com os custos do apartamento. 
+    private ArrayList <Tarefa> TarefasDoAp = new ArrayList < > (); // Lista com as tarefas do apartamento que precisam ser feitas.
 
     private double DespesaTotal = 0; // Total das depesas que a moradia possui no periodo de tempo determinado.
     private double DespesaFixa = 0; // Total das despesas fixas que a moradia possui.
@@ -36,13 +36,14 @@ public class Apartamento {
 
     public void setCusto(Custos custo) {
         Custos.add(custo); // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando 
-        double v = custo.getValorCusto();
-        DespesaTotal += v;
+        
+        double ValorCusto = custo.getValorCusto();
+        DespesaTotal += ValorCusto;
     }                      // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"  
 
 
     public void setTask(Tarefa task) {
-        Task.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando 
+        TarefasDoAp.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando 
                             // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"    
     }
     
