@@ -3,9 +3,9 @@ import java.util.ArrayList;
 
 public class Apartamento {
     
-    private  ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > (); // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
-    private ArrayList <Custos> Custos = new ArrayList< > ();             // Custo total para manter apartamento. 
-    private ArrayList <Tarefa> Task = new ArrayList< > ();
+    private ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > (); // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
+    private ArrayList <Custos> Custos = new ArrayList < > ();             // Custo total para manter apartamento. 
+    private ArrayList <Tarefa> TarefasDoAp = new ArrayList < > ();
 
     private double DespesaTotal = 0;
     private double DespesaFixa = 0;
@@ -38,13 +38,14 @@ public class Apartamento {
 
     public void setCusto(Custos custo) {
         Custos.add(custo); // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando 
-        double v = custo.getValorCusto();
-        DespesaTotal += v;
+        
+        double ValorCusto = custo.getValorCusto();
+        DespesaTotal += ValorCusto;
     }                      // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"  
 
 
     public void setTask(Tarefa task) {
-        Task.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando 
+        TarefasDoAp.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando 
                             // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"    
     }
     

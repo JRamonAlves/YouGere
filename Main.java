@@ -18,9 +18,7 @@ public class Main {
     ap1.Exibirmoradores();
 
     ap1.setCusto(moradia);
-    System.out.println(ap1.getDespesaTotal());
     ap1.setCusto(Comodidade);
     // ap1.ExibirCustos();
-    System.out.println(ap1.getDespesaTotal());
     }
 }
