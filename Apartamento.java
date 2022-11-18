@@ -6,9 +6,9 @@ public class Apartamento {
     private ArrayList <Custos> Custos = new ArrayList < > (); // Lista com os custos do apartamento. 
     private ArrayList <Tarefa> TarefasDoAp = new ArrayList < > (); // Lista com as tarefas do apartamento que precisam ser feitas.
 
-    private double DespesaTotal = 0; // Total das depesas que a moradia possui no periodo de tempo determinado.
     private double DespesaFixa = 0; // Total das despesas fixas que a moradia possui.
     private double DespesaAdicional = 0; // Total das despesas adicionais do mêsm, do periodo de tempo determinado.
+    private double DespesaTotal = DespesaFixa + DespesaAdicional; // Total das depesas que a moradia possui no periodo de tempo determinado.
 
         //SETS E GETS DAS DESPESAS teste
 
