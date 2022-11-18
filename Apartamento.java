@@ -94,14 +94,14 @@ public class Apartamento {
 
         int i = 1; // Var aux para enumerar cada OBJ que será exibido
 
-        System.out.println("-----------------------"+"\n\tCOLEGAS"+"\n-----------------------");
+        System.out.println("-----------------------"+"\n\tCOLEGAS");
+        System.out.println("");
 
         for(ColegasDeQuarto e: Colegas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um. 
 
             System.out.println("\t" +i+"º "+ e.getNome()); // Mostra nome de cada colega de quarto cadastrado.
             i += 1;
         }
-        System.out.println("\n");
     }
 
     public void ExibirCustos(){
@@ -110,8 +110,8 @@ public class Apartamento {
         
         double soma = 0;
         System.out.println("-------------------------------");
-        System.out.println(" TIPO DESPESA -"+"\tVALOR DESPESA");
-        System.out.println("-------------------------------");
+        System.out.println("{TIPO DESPESA -"+"\tVALOR DESPESA}");
+        System.out.println("");
 
         // EXIBE CADA DESPESA DA CLASSE CUSTOS COM UM FOR EACH
         for(Custos e: Custos){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
@@ -119,9 +119,24 @@ public class Apartamento {
             soma += e.getValorCusto();
             i+=1;
         }
-        i = 1;
 
         // EXIBE A DESPESA TOTAL 
         System.out.println("-------------------------------\nDESPESA TOTAL: R$" +soma+"\n"+"DESPESA FIXA: R$" +DespesaFixa+"\n"+"DESPESA ADICIONAL: R$" +DespesaAdicional+"\n");
     }
+
+    public void ExibirTarefas() {
+
+        int i = 1; // Var aux para enumerar cada OBJ que será exibido
+        
+        System.out.println("-------------------------------");
+        System.out.println("{TAREFAS   -  PESSOA RESPONSÁVEL}");
+        System.out.println("");
+
+        // EXIBE CADA DESPESA DA CLASSE TAREFAS COM UM FOR EACH
+        for(Tarefa e: TarefasDoAp){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
+            System.out.println(i + "º " + e.getNome_tarefa() + "-" + e.getColega());
+            i+=1;
+        }  
+    }
+
 }

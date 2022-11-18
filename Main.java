@@ -19,5 +19,7 @@ public class Main {
     ap1.ExibirMoradores();
 
     ap1.ExibirCustos();
+
+    ap1.ExibirTarefas();
     }
 }
