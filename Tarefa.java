@@ -10,7 +10,7 @@ public class Tarefa {
         this.inicio_task = inicio_task;
         this.prazo_task = prazo_task;
         this.apartamento = ap;  
-        ap.setTask(this);
+        ap.addTask(this);
     }
 
         //GETS E SETS PADRÕES

@@ -16,10 +16,10 @@ public class Main {
 
     // TESTE DOS MÉTODOS DA CLASSE APARTAMENTO
      
-    ap1.Exibirmoradores();
+    ap1.ExibirMoradores();
 
-    ap1.setCusto(moradia);
-    ap1.setCusto(Comodidade);
+    ap1.addCusto(moradia);
+    ap1.addCusto(Comodidade);
     // ap1.ExibirCustos();
     }
 }

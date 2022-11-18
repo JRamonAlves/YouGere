@@ -7,7 +7,7 @@ public class ColegasDeQuarto {
     public ColegasDeQuarto(String nomeColega, int celularDoColega, int taskColega, Apartamento Apartamento) {
         this.nome = nomeColega;
         this.celular = celularDoColega;
-        Apartamento.setColegas(this); // Implementação para que assim que seja criado um "ColegasDeQuarto" seja necessário colocar o apartamento que ele irá morar
+        Apartamento.addColegas(this); // Implementação para que assim que seja criado um "ColegasDeQuarto" seja necessário colocar o apartamento que ele irá morar
         this.moradia = Apartamento;
     
     }
