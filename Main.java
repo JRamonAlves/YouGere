@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String [] arsgs) {
+    
+    // OBJ APARTAMENTO.
     Apartamento ap1 = new Apartamento();
     
     // COLEGAS DE QUARTO - CRIAR OBJETO PASSANDO AS INFOS EM UM CONSTRUTOR 
