@@ -10,8 +10,8 @@ public class Apartamento {
     private double DespesaAdicional = 0; // Total das despesas adicionais do mêsm, do periodo de tempo determinado.
     private double DespesaTotal = DespesaFixa + DespesaAdicional; // Total das depesas que a moradia possui no periodo de tempo determinado.
 
-        //SETS E GETS DAS DESPESAS teste
 
+    //SETS E GETS DAS DESPESAS teste
     public void setDespesaTotal(double despesaTotal) {
         DespesaTotal = despesaTotal;
     }
@@ -32,8 +32,8 @@ public class Apartamento {
         return DespesaAdicional;
     }
 
-        // GETS DOS ARRAYS
 
+    // GETS DOS ARRAYS
     public ArrayList<ColegasDeQuarto> getColegas() {
         return Colegas;
     }
@@ -44,8 +44,8 @@ public class Apartamento {
         return TarefasDoAp;
     }
     
-        //Métodos para adição de elementos no Array
 
+    //Métodos para adição de elementos no Array
     public void addColegas(ColegasDeQuarto colega) {
         Colegas.add(colega);    // Setando um colega do tipo "ColegasDeQuarto". Como se trata de um arrey o SET nesse caso funcionará usando 
     }                           // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"
@@ -69,8 +69,8 @@ public class Apartamento {
                             // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"    
     }
 
-    // Métodos para exclusão de elementos dos Arrays
 
+    // Métodos para exclusão de elementos dos Arrays
     public void deleteColegas(ColegasDeQuarto colegas) {
         Colegas.remove(colegas);
     }
@@ -95,11 +95,11 @@ public class Apartamento {
         TarefasDoAp.remove(index);
     }
     
-    // Métodos particulares da classe "Apartamento"
 
+    // Métodos particulares da classe "Apartamento"
+    int i = 1; // Var aux para enumerar cada OBJ que será exibido
     public void ExibirMoradores(){
 
-        int i = 1; // Var aux para enumerar cada OBJ que será exibido
 
         System.out.println("-----------------------"+"\n\tCOLEGAS");
         System.out.println("");
@@ -109,14 +109,11 @@ public class Apartamento {
             System.out.println("\t" +i+"º "+ e.getNome()); // Mostra nome de cada colega de quarto cadastrado.
             i += 1;
         }
-        
-        System.out.println("");
+        i=1; // ao sair do loop o i retorna para o valor 1 de contagem
     }
 
+    
     public void ExibirCustos(){
-
-        int i = 1; // Var aux para enumerar cada OBJ que será exibido
-        
         double soma = 0;
         System.out.println("-------------------------------");
         System.out.println("{TIPO DESPESA -"+"\tVALOR DESPESA}");
@@ -132,6 +129,7 @@ public class Apartamento {
         // EXIBE A DESPESA TOTAL 
         System.out.println("\nDESPESA TOTAL: R$" +soma+"\n"+"DESPESA FIXA: R$" +DespesaFixa+"\n"+"DESPESA ADICIONAL: R$" +DespesaAdicional+"\n");
     }
+
 
     public void ExibirTarefas() {
 
