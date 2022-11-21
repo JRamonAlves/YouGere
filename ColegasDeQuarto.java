@@ -3,11 +3,11 @@ public class ColegasDeQuarto {
     private String nome;
     private int celular;
     private Apartamento moradia;
+    private Custos custoAluno;
 
     public ColegasDeQuarto(String nomeColega, int celularDoColega, int taskColega, Apartamento Apartamento) {
         this.nome = nomeColega;
         this.celular = celularDoColega;
-        Apartamento.addColegas(this); // Implementação para que assim que seja criado um "ColegasDeQuarto" seja necessário colocar o apartamento que ele irá morar
         this.moradia = Apartamento;
     
     }
@@ -33,4 +33,8 @@ public class ColegasDeQuarto {
     public void setMoradia(Apartamento moradia) {
         this.moradia = moradia;
     }
-}
+
+    public void setCustoAluno(Custos custoAluno) {
+        this.custoAluno = custoAluno;
+    }
+}   
