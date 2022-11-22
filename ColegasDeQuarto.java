@@ -38,7 +38,7 @@ public class ColegasDeQuarto {
         this.moradia = moradia;
     }
 
-    public void setCustoAluno(Double custo) {
-        this.custoAluno += custo;
-    }
+   public void setCustoAluno(double custoAluno) {
+       this.custoAluno = custoAluno;
+   }
 }   

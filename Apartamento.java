@@ -9,11 +9,11 @@ public class Apartamento {
 
     private double DespesaFixa;                                     // Total das despesas fixas que a moradia possui.
     private double DespesaAdicional;                                // Total das despesas adicionais do mês, do periodo de tempo determinado.
-    private double DespesaTotal = DespesaAdicional + DespesaFixa;
+    private double DespesaTotal;
 
     //GETS DAS DESPESAS 
     public double getDespesaTotal() {
-        return DespesaTotal;
+        return this.DespesaTotal;
     }
     public double getDespesaFixa() {
         return DespesaFixa;
@@ -44,11 +44,13 @@ public class Apartamento {
         
         double ValorCusto = custo.getValorCusto();
         DespesaFixa += ValorCusto;
+        DespesaTotal += ValorCusto;
     }  
     public void addCustoAdicional(Custos custo){
         Custos.add(custo);
         double ValorCusto = custo.getValorCusto();
         DespesaAdicional += ValorCusto;
+        DespesaTotal += ValorCusto;
     
     }
     public void addTask(Tarefa task) {
@@ -110,20 +112,23 @@ public class Apartamento {
             // EXIBE A DESPESA TOTAL 
             System.out.println("\nDESPESA ADICIONAL: R$" +DespesaAdicional+"\n"+"DESPESA FIXA: R$" +DespesaFixa+"\nDESPESA TOTAL: R$" +soma);
             System.out.println("Deseja dividir os igualmente para todos os membros? S/N");
-            String escolha = in.next();  
+            String escolha = in.nextLine();  
             
             if (escolha.toLowerCase() == "s"){
-               double DivideCustos = DespesaTotal / Colegas.size(); 
-               System.out.println("Divisão de R$"+DivideCustos+" Reais para cada Colega de quarto\n realizado com sucesso!");
-
-               for(ColegasDeQuarto e: Colegas){ 
-                     e.setCustoAluno(DivideCustos);
-                    }
-              
+                DivideCustos();
             }
         }
 
      }
+    public void DivideCustos(){
+    int qntdColegas = Colegas.size();
+    double DivideCustos = DespesaTotal / qntdColegas;
+
+    for(ColegasDeQuarto c: Colegas){
+        c.setCustoAluno(DivideCustos);
+    }
+    
+    }
     public void ExibirTarefas() {
 
         int i = 1; // Var aux para enumerar cada OBJ que será exibido

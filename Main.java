@@ -19,11 +19,12 @@ public class Main {
     ap1.addColegas(coleguinha);
     ap1.addCustoAdicional(Comodidade);
     ap1.addCustoFixo(moradia);
-
     // ap1.ExibirMoradores();
     // ap1.ExibirCustos();
-    System.out.println(ap1.getDespesaTotal());
     // System.out.println(coleguinha.getCustos());
+    ap1.DivideCustos();
+    System.out.println(coleguinha.getCustos());
+
 
    
     }
