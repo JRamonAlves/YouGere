@@ -15,11 +15,16 @@ public class Main {
     Custos Comodidade = new Custos("Net/Agua/Luz", 200, ap1);
 
     // TESTE DOS MÉTODOS DA CLASSE APARTAMENTO
-     
-    ap1.ExibirMoradores();
+    ap1.addColegas(coleguinha2);
+    ap1.addColegas(coleguinha);
+    ap1.addCustoAdicional(Comodidade);
+    ap1.addCustoFixo(moradia);
 
-    ap1.ExibirCustos();
+    // ap1.ExibirMoradores();
+    // ap1.ExibirCustos();
+    System.out.println(ap1.getDespesaTotal());
+    // System.out.println(coleguinha.getCustos());
 
-    ap1.ExibirTarefas();
+   
     }
 }

@@ -3,7 +3,7 @@ public class ColegasDeQuarto {
     private String nome;
     private int celular;
     private Apartamento moradia;
-    private Custos custoAluno;
+    private double custoAluno;
 
     public ColegasDeQuarto(String nomeColega, int celularDoColega, int taskColega, Apartamento Apartamento) {
         this.nome = nomeColega;
@@ -12,7 +12,7 @@ public class ColegasDeQuarto {
     
     }
 
-        // SETS E GETS PADRÕES
+    // SETS E GETS PADRÕES
 
     public String getNome() {
         return nome;
@@ -22,6 +22,10 @@ public class ColegasDeQuarto {
     }
     public Apartamento getMoradia() {
         return moradia;
+    }
+
+    public double getCustos(){
+        return custoAluno;
     }
 
     public void setNome(String nome) {
@@ -34,7 +38,7 @@ public class ColegasDeQuarto {
         this.moradia = moradia;
     }
 
-    public void setCustoAluno(Custos custoAluno) {
-        this.custoAluno = custoAluno;
+    public void setCustoAluno(Double custo) {
+        this.custoAluno += custo;
     }
 }   

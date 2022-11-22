@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Apartamento {
     
@@ -6,10 +7,9 @@ public class Apartamento {
     private ArrayList <Custos> Custos = new ArrayList < > ();           // Lista com os custos do apartamento. 
     private ArrayList <Tarefa> TarefasDoAp = new ArrayList < > ();      // Lista com as tarefas do apartamento que precisam ser feitas.
 
-    private double DespesaFixa = 0;                                     // Total das despesas fixas que a moradia possui.
-    private double DespesaAdicional = 0;                                // Total das despesas adicionais do mês, do periodo de tempo determinado.
-    private double DespesaTotal = DespesaFixa + DespesaAdicional;       // Total das depesas que a moradia possui no periodo de tempo determinado.
-
+    private double DespesaFixa;                                     // Total das despesas fixas que a moradia possui.
+    private double DespesaAdicional;                                // Total das despesas adicionais do mês, do periodo de tempo determinado.
+    private double DespesaTotal = DespesaAdicional + DespesaFixa;
 
     //GETS DAS DESPESAS 
     public double getDespesaTotal() {
@@ -39,21 +39,18 @@ public class Apartamento {
     public void addColegas(ColegasDeQuarto colega) {
         Colegas.add(colega);    // Setando um colega do tipo "ColegasDeQuarto". Como se trata de um arrey o SET nesse caso funcionará usando 
     }                           // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"
-    
     public void addCustoFixo(Custos custo) {
         Custos.add(custo);      // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()
         
         double ValorCusto = custo.getValorCusto();
         DespesaFixa += ValorCusto;
     }  
-
     public void addCustoAdicional(Custos custo){
         Custos.add(custo);
-
         double ValorCusto = custo.getValorCusto();
-        DespesaTotal +=ValorCusto;
+        DespesaAdicional += ValorCusto;
+    
     }
-
     public void addTask(Tarefa task) {
         TarefasDoAp.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando 
                                 // funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"    
@@ -64,23 +61,18 @@ public class Apartamento {
     public void deleteColegas(ColegasDeQuarto colegas) {
         Colegas.remove(colegas);
     }
-
     public void deleteColegas(int index) {
         Colegas.remove(index);
     }
-        
     public void deleteCustos(Custos custos) {
         Custos.remove(custos);
-    }
-        
+    }      
     public void deleteCustos(int index) {
         Custos.remove(index);
     }
-
     public void deleteTarefa(Tarefa tarefa) {
         TarefasDoAp.remove(tarefa);
     }
-
     public void deleteTarefa(int index) {
         TarefasDoAp.remove(index);
     }
@@ -101,26 +93,37 @@ public class Apartamento {
         }
         i=1; // ao sair do loop o i retorna para o valor 1 de contagem
     }
-
-
     public void ExibirCustos(){
         double soma = 0;
-        System.out.println("\n-------------------------------");
-        System.out.println("| TIPO DESPESA -"+" VALOR DESPESA |");
-        System.out.println("-------------------------------");
+        try (Scanner in = new Scanner(System.in)) {
+            System.out.println("\n-------------------------------");
+            System.out.println("| TIPO DESPESA -"+" VALOR DESPESA |");
+            System.out.println("-------------------------------");
 
-        // EXIBE CADA DESPESA DA CLASSE CUSTOS COM UM FOR EACH
-        for(Custos e: Custos){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
-            System.out.println(i +" "+e.getNomeCusto()+" - R$"+e.getValorCusto()+"");
-            soma += e.getValorCusto();
-            i+=1;
+            // EXIBE CADA DESPESA DA CLASSE CUSTOS COM UM FOR EACH
+            for(Custos e: Custos){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
+                System.out.println(i +" "+e.getNomeCusto()+" - R$"+e.getValorCusto()+"");
+                soma += e.getValorCusto();
+                i+=1;
+            }
+
+            // EXIBE A DESPESA TOTAL 
+            System.out.println("\nDESPESA ADICIONAL: R$" +DespesaAdicional+"\n"+"DESPESA FIXA: R$" +DespesaFixa+"\nDESPESA TOTAL: R$" +soma);
+            System.out.println("Deseja dividir os igualmente para todos os membros? S/N");
+            String escolha = in.next();  
+            
+            if (escolha.toLowerCase() == "s"){
+               double DivideCustos = DespesaTotal / Colegas.size(); 
+               System.out.println("Divisão de R$"+DivideCustos+" Reais para cada Colega de quarto\n realizado com sucesso!");
+
+               for(ColegasDeQuarto e: Colegas){ 
+                     e.setCustoAluno(DivideCustos);
+                    }
+              
+            }
         }
 
-        // EXIBE A DESPESA TOTAL 
-        System.out.println("\nDESPESA TOTAL: R$" +soma+"\n"+"DESPESA FIXA: R$" +DespesaFixa+"\n"+"DESPESA ADICIONAL: R$" +DespesaAdicional+"\n");
-    }
-
-
+     }
     public void ExibirTarefas() {
 
         int i = 1; // Var aux para enumerar cada OBJ que será exibido
