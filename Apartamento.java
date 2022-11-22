@@ -5,7 +5,7 @@ public class Apartamento {
     
     private ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > ();  // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
     private ArrayList <Custos> Custos = new ArrayList < > ();           // Lista com os custos do apartamento. 
-    private ArrayList <Tarefa> TarefasDoAp = new ArrayList < > ();      // Lista com as tarefas do apartamento que precisam ser feitas.
+    private ArrayList <Tarefa> Tarefas = new ArrayList < > ();      // Lista com as tarefas do apartamento que precisam ser feitas.
 
     private double DespesaFixa;                                     // Total das despesas fixas que a moradia possui.
     private double DespesaAdicional;                                // Total das despesas adicionais do mês, do periodo de tempo determinado.
@@ -30,8 +30,8 @@ public class Apartamento {
     public ArrayList<Custos> getCustos() {
         return Custos;
     }
-    public ArrayList<Tarefa> getTarefasDoAp() {
-        return TarefasDoAp;
+    public ArrayList<Tarefa> getTarefas() {
+        return Tarefas;
     }
     
 
@@ -54,7 +54,7 @@ public class Apartamento {
     
     }
     public void addTask(Tarefa task) {
-        TarefasDoAp.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando 
+        Tarefas.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando 
                                 // funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"    
     }
 
@@ -73,17 +73,17 @@ public class Apartamento {
         Custos.remove(index);
     }
     public void deleteTarefa(Tarefa tarefa) {
-        TarefasDoAp.remove(tarefa);
+        Tarefas.remove(tarefa);
     }
     public void deleteTarefa(int index) {
-        TarefasDoAp.remove(index);
+        Tarefas.remove(index);
     }
     
 
     // Métodos particulares da classe "Apartamento"
-    int i = 1; // Var aux para enumerar cada OBJ que será exibido
     public void ExibirMoradores(){
 
+        int i = 1; // Variável auxiliar para contagem do ciclo de repetições
 
         System.out.println("\n-----------------------"+"\n\tCOLEGAS");
         System.out.println("-----------------------");
@@ -93,9 +93,12 @@ public class Apartamento {
             System.out.println("\t" +i+"º "+ e.getNome()); // Mostra nome de cada colega de quarto cadastrado.
             i += 1;
         }
-        i=1; // ao sair do loop o i retorna para o valor 1 de contagem
     }
     public void ExibirCustos(){
+
+        int i = 1; // Variável auxiliar para contagem do ciclo de repetições
+
+        
         double soma = 0;
         try (Scanner in = new Scanner(System.in)) {
             System.out.println("\n-------------------------------");
@@ -103,6 +106,7 @@ public class Apartamento {
             System.out.println("-------------------------------");
 
             // EXIBE CADA DESPESA DA CLASSE CUSTOS COM UM FOR EACH
+            
             for(Custos e: Custos){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
                 System.out.println(i +" "+e.getNomeCusto()+" - R$"+e.getValorCusto()+"");
                 soma += e.getValorCusto();
@@ -110,6 +114,7 @@ public class Apartamento {
             }
 
             // EXIBE A DESPESA TOTAL 
+            
             System.out.println("\nDESPESA ADICIONAL: R$" +DespesaAdicional+"\n"+"DESPESA FIXA: R$" +DespesaFixa+"\nDESPESA TOTAL: R$" +soma);
             System.out.println("Deseja dividir os igualmente para todos os membros? S/N");
             String escolha = in.nextLine();  
@@ -121,12 +126,12 @@ public class Apartamento {
 
      }
     public void DivideCustos(){
-    int qntdColegas = Colegas.size();
-    double DivideCustos = DespesaTotal / qntdColegas;
+        int qntdColegas = Colegas.size();
+        double DivideCustos = DespesaTotal / qntdColegas;
 
-    for(ColegasDeQuarto c: Colegas){
-        c.setCustoAluno(DivideCustos);
-    }
+        for(ColegasDeQuarto c: Colegas){
+            c.setCustoAluno(DivideCustos);
+        }
     
     }
     public void ExibirTarefas() {
@@ -138,7 +143,7 @@ public class Apartamento {
         System.out.println("-------------------------------");
 
         // EXIBE CADA DESPESA DA CLASSE TAREFAS COM UM FOR EACH
-        for(Tarefa e: TarefasDoAp){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
+        for(Tarefa e: Tarefas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
             System.out.println(i + "º " + e.getNome_tarefa() + "-" + e.getColega());
             i+=1;
         }  
