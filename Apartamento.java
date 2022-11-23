@@ -46,7 +46,7 @@ public class Apartamento {
         DespesaFixa += ValorCusto;
         DespesaTotal += ValorCusto;
     }  
-    public void addCustoAdicional(Custos custo){
+    public void addCustoAdicional(Custos custo) {
         Custos.add(custo);
         double ValorCusto = custo.getValorCusto();
         DespesaAdicional += ValorCusto;
@@ -54,8 +54,10 @@ public class Apartamento {
     
     }
     public void addTask(Tarefa task) {
-        Tarefas.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando 
-                                // funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"    
+        
+        Tarefas.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"
+
+        
     }
 
 
@@ -81,7 +83,7 @@ public class Apartamento {
     
 
     // Métodos particulares da classe "Apartamento"
-    public void ExibirMoradores(){
+    public void ExibirMoradores() {
 
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
 
@@ -94,7 +96,7 @@ public class Apartamento {
             i += 1;
         }
     }
-    public void ExibirCustos(){
+    public void ExibirCustos() {
 
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
 
@@ -125,7 +127,7 @@ public class Apartamento {
         }
 
      }
-    public void DivideCustos(){
+    public void DivideCustos() {
         int qntdColegas = Colegas.size();
         double DivideCustos = DespesaTotal / qntdColegas;
 

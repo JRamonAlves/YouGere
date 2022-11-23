@@ -30,8 +30,9 @@ public class Main {
     //System.out.println(coleguinha.getCustos());
     //ap1.DivideCustos();
     //System.out.println(coleguinha.getCustoAluno());
-
-
+    
+    //coleguinha.addTarefas(limparbanheiro);
+    //coleguinha.ExibirTarefas();
 
     }
 }

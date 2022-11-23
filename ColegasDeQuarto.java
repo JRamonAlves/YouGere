@@ -53,25 +53,25 @@ public class ColegasDeQuarto {
         this.tarefas = tarefas;
     }
     
-    public void addTarefas(Tarefa Tarefa){
+    public void addTarefas(Tarefa Tarefa) {
 
         tarefas.add(Tarefa);
 
     }
 
-    public void deleteTarefas(Tarefa Tarefa){
+    public void deleteTarefas(Tarefa Tarefa) {
 
         tarefas.remove(Tarefa);
 
     }
 
-    public void deleteTarefas(int index){
+    public void deleteTarefas(int index) {
 
         tarefas.remove(index);
 
     }
 
-    public void ExibirTarefas(){
+    public void ExibirTarefas() {
 
         int i = 1; // Var aux para enumerar cada OBJ que será exibido
         
@@ -83,7 +83,7 @@ public class ColegasDeQuarto {
 
         for(Tarefa e: tarefas){ // Foreach - para cada obj dentro de tarefas me mostre cada um.
             
-            System.out.println(i + "º " + e.getNome_tarefa() + "-" + e.getColega());
+            System.out.println(i + "º " + e.getNome_tarefa());
             i+=1;
         }  
     }
