@@ -11,7 +11,9 @@ public class Apartamento {
     private double DespesaAdicional;                                // Total das despesas adicionais do mês, do periodo de tempo determinado.
     private double DespesaTotal;
 
+
     //GETS DAS DESPESAS 
+
     public double getDespesaTotal() {
         return this.DespesaTotal;
     }
@@ -24,6 +26,7 @@ public class Apartamento {
 
 
     // GETS DOS ARRAYS
+
     public ArrayList<ColegasDeQuarto> getColegas() {
         return Colegas;
     }
@@ -35,17 +38,30 @@ public class Apartamento {
     }
     
 
-    //Métodos para adição de elementos no Array
+    // Métodos para gerenciamento dos Arrays
+
+        // Colegas do Apartamento
+
     public void addColegas(ColegasDeQuarto colega) {
         Colegas.add(colega);    // Setando um colega do tipo "ColegasDeQuarto". Como se trata de um arrey o SET nesse caso funcionará usando 
     }                           // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"
+    
+    public void deleteColegas(ColegasDeQuarto colegas) {
+        Colegas.remove(colegas);
+    }
+    public void deleteColegas(int index) {
+        Colegas.remove(index);
+    }
+    
+        // Custos
+
     public void addCustoFixo(Custos custo) {
         Custos.add(custo);      // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()
         
         double ValorCusto = custo.getValorCusto();
         DespesaFixa += ValorCusto;
         DespesaTotal += ValorCusto;
-    }  
+    }      
     public void addCustoAdicional(Custos custo) {
         Custos.add(custo);
         double ValorCusto = custo.getValorCusto();
@@ -53,6 +69,16 @@ public class Apartamento {
         DespesaTotal += ValorCusto;
     
     }
+    
+    public void deleteCustos(Custos custos) {
+        Custos.remove(custos);
+    }      
+    public void deleteCustos(int index) {
+        Custos.remove(index);
+    }
+    
+        // Tarefas
+
     public void addTask(Tarefa task) {
         
         Tarefas.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"
@@ -60,20 +86,6 @@ public class Apartamento {
         
     }
 
-
-    // Métodos para exclusão de elementos dos Arrays
-    public void deleteColegas(ColegasDeQuarto colegas) {
-        Colegas.remove(colegas);
-    }
-    public void deleteColegas(int index) {
-        Colegas.remove(index);
-    }
-    public void deleteCustos(Custos custos) {
-        Custos.remove(custos);
-    }      
-    public void deleteCustos(int index) {
-        Custos.remove(index);
-    }
     public void deleteTarefa(Tarefa tarefa) {
         Tarefas.remove(tarefa);
     }
@@ -83,6 +95,7 @@ public class Apartamento {
     
 
     // Métodos particulares da classe "Apartamento"
+
     public void ExibirMoradores() {
 
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições

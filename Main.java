@@ -1,7 +1,8 @@
 public class Main {
     public static void main(String [] arsgs) {
     
-    // OBJ APARTAMENTO.
+    // OBJ APARTAMENTO.]
+    
     Apartamento ap1 = new Apartamento();
     
     // COLEGAS DE QUARTO - CRIAR OBJETO PASSANDO AS INFOS EM UM CONSTRUTOR 
@@ -21,18 +22,17 @@ public class Main {
 
     // TESTE DOS MÉTODOS DA CLASSE APARTAMENTO
     
-    //ap1.addColegas(coleguinha2);
-    //ap1.addColegas(coleguinha);
-    //ap1.addCustoAdicional(Comodidade);
-    //ap1.addCustoFixo(moradia);
-    //ap1.ExibirMoradores();
-    //ap1.ExibirCustos();
-    //System.out.println(coleguinha.getCustos());
-    //ap1.DivideCustos();
-    //System.out.println(coleguinha.getCustoAluno());
+    ap1.addColegas(coleguinha2);
+    ap1.addColegas(coleguinha);
+    ap1.addCustoAdicional(Comodidade);
+    ap1.addCustoFixo(moradia);
+    ap1.ExibirMoradores();
+    ap1.ExibirCustos();
+    ap1.DivideCustos();
+    System.out.println(coleguinha.getCustoAluno());
     
-    //coleguinha.addTarefas(limparbanheiro);
-    //coleguinha.ExibirTarefas();
+    coleguinha.addTarefas(limparbanheiro);
+    coleguinha.ExibirTarefas();
 
     }
 }
