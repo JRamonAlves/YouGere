@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Apartamento {
@@ -81,9 +82,34 @@ public class Apartamento {
 
     public void addTask(Tarefa task) {
         
+        int i = 0;
+        
         Tarefas.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"
 
-        
+        int numeroTarefas = Tarefas.size();
+        int numeroColegas = Colegas.size();
+
+        if (numeroColegas == numeroTarefas) {
+
+            for (ColegasDeQuarto colegas : Colegas) {
+
+                colegas.addTarefas(Tarefas.get(i));
+                
+            }
+        }
+
+        if (numeroColegas > numeroTarefas) {
+
+            Random random = new Random();
+            int colegaQualquer = random.nextInt(numeroColegas);
+
+            for (ColegasDeQuarto colegasDeQuarto : Colegas) {
+
+                
+                
+            }
+            
+        }
     }
 
     public void deleteTarefa(Tarefa tarefa) {
@@ -100,7 +126,7 @@ public class Apartamento {
 
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
 
-        System.out.println("\n-----------------------"+"\n\tCOLEGAS");
+        System.out.println("-----------------------\n\tCOLEGAS");
         System.out.println("-----------------------");
 
         for(ColegasDeQuarto e: Colegas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um. 
@@ -108,29 +134,35 @@ public class Apartamento {
             System.out.println("\t" +i+"º "+ e.getNome()); // Mostra nome de cada colega de quarto cadastrado.
             i += 1;
         }
+        System.out.println("-----------------------");
+        System.out.println();
+
     }
     public void ExibirCustos() {
 
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
-
         
         double soma = 0;
         try (Scanner in = new Scanner(System.in)) {
-            System.out.println("\n-------------------------------");
+            System.out.println("-------------------------------");
             System.out.println("| TIPO DESPESA -"+" VALOR DESPESA |");
             System.out.println("-------------------------------");
 
             // EXIBE CADA DESPESA DA CLASSE CUSTOS COM UM FOR EACH
             
             for(Custos e: Custos){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
-                System.out.println(i +" "+e.getNomeCusto()+" - R$"+e.getValorCusto()+"");
+                System.out.println(i + " " + e.getNomeCusto() + " - R$" + e.getValorCusto() + "");
                 soma += e.getValorCusto();
                 i+=1;
             }
 
             // EXIBE A DESPESA TOTAL 
             
-            System.out.println("\nDESPESA ADICIONAL: R$" +DespesaAdicional+"\n"+"DESPESA FIXA: R$" +DespesaFixa+"\nDESPESA TOTAL: R$" +soma);
+            System.out.println("DESPESA ADICIONAL: R$" + DespesaAdicional);
+            System.out.println("DESPESA FIXA: R$" + DespesaFixa);
+            System.out.println("DESPESA TOTAL: R$" + soma);
+            System.out.println();
+
             System.out.println("Deseja dividir os igualmente para todos os membros? S/N");
             String escolha = in.nextLine();  
             
@@ -138,9 +170,9 @@ public class Apartamento {
                 DivideCustos();
             }
         }
-
-     }
+    }
     public void DivideCustos() {
+        
         int qntdColegas = Colegas.size();
         double DivideCustos = DespesaTotal / qntdColegas;
 
