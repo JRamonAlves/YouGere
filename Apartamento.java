@@ -6,10 +6,10 @@ public class Apartamento {
     
     private ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > ();  // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
     private ArrayList <Custos> Custos = new ArrayList < > ();           // Lista com os custos do apartamento. 
-    private ArrayList <Tarefa> Tarefas = new ArrayList < > ();      // Lista com as tarefas do apartamento que precisam ser feitas.
+    private ArrayList <Tarefa> Tarefas = new ArrayList < > ();          // Lista com as tarefas do apartamento que precisam ser feitas.
 
-    private double DespesaFixa;                                     // Total das despesas fixas que a moradia possui.
-    private double DespesaAdicional;                                // Total das despesas adicionais do mês, do periodo de tempo determinado.
+    private double DespesaFixa;                                         // Total das despesas fixas que a moradia possui.
+    private double DespesaAdicional;                                    // Total das despesas adicionais do mês, do periodo de tempo determinado.
     private double DespesaTotal;
 
 
