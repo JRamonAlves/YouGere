@@ -94,8 +94,17 @@ public class Apartamento {
             for (ColegasDeQuarto colegas : Colegas) {
 
                 colegas.addTarefas(Tarefas.get(i));
+                i = i + 1;
                 
             }
+        }
+
+        if (numeroColegas < numeroTarefas) {
+
+            for (ColegasDeQuarto colegasDeQuarto : Colegas) {
+                
+            }
+            
         }
 
         if (numeroColegas > numeroTarefas) {
@@ -104,6 +113,7 @@ public class Apartamento {
             int colegaQualquer = random.nextInt(numeroColegas);
 
             for (ColegasDeQuarto colegasDeQuarto : Colegas) {
+                
 
                 
                 

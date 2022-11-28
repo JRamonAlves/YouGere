@@ -1,4 +1,4 @@
-public class Custos {
+abstract class Custos {
     private String nomeCusto;
     private int valorCusto;
     private Apartamento Ap;
@@ -28,8 +28,6 @@ public class Custos {
         this.valorCusto = valorCusto;
     }
     public void setAp(Apartamento ap) {
-        Ap = ap;
+        this.Ap = ap;
     }
 }
-
-
