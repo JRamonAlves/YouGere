@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.sound.sampled.TargetDataLine;
+
 public class Apartamento {
     
     private ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > ();  // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
@@ -101,10 +103,18 @@ public class Apartamento {
 
         if (numeroColegas < numeroTarefas) {
 
-            for (ColegasDeQuarto colegasDeQuarto : Colegas) {
+            try {
+                
+                for (Tarefa tarefa : Tarefas) {
+
+                    tarefa.setColega(Colegas.get(i));
+                    i = i + 1;
+                
+                }
+                
+            } catch (Exception e) {
                 
             }
-            
         }
 
         if (numeroColegas > numeroTarefas) {
@@ -200,8 +210,9 @@ public class Apartamento {
         System.out.println("-------------------------------");
 
         // EXIBE CADA DESPESA DA CLASSE TAREFAS COM UM FOR EACH
+        
         for(Tarefa e: Tarefas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
-            System.out.println(i + "º " + e.getNome_tarefa() + "-" + e.getColega());
+            System.out.println(i + "º " + e.getNome_tarefa() + " - " + e.getColega().getNome());
             i+=1;
         }  
     }

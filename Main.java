@@ -27,13 +27,11 @@ public class Main {
     ap1.addCustoAdicional(Comodidade);
     ap1.addCustoFixo(moradia);
     ap1.ExibirMoradores();
-    ap1.ExibirCustos();
-    ap1.DivideCustos();
-    System.out.println(coleguinha.getCustoAluno());
+    //ap1.ExibirCustos();
+    //ap1.DivideCustos();
+    //System.out.println(coleguinha.getCustoAluno());
     
-    coleguinha.addTarefas(limparbanheiro);
-    coleguinha.addTarefas(lavarlouça);
-    coleguinha.ExibirTarefas();
+    ap1.ExibirTarefas();
 
     }
 }

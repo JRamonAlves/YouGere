@@ -56,6 +56,7 @@ public class ColegasDeQuarto {
     public void addTarefas(Tarefa Tarefa) {
 
         tarefas.add(Tarefa);
+        Tarefa.setColega(null);
 
     }
 
