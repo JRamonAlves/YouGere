@@ -42,13 +42,11 @@ public class Apartamento {
     
 
     // Métodos para gerenciamento dos Arrays
-
-        // Colegas do Apartamento
+    // Colegas do Apartamento
 
     public void addColegas(ColegasDeQuarto colega) {
         Colegas.add(colega);    // Setando um colega do tipo "ColegasDeQuarto". Como se trata de um arrey o SET nesse caso funcionará usando 
     }                           // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"
-    
     public void deleteColegas(ColegasDeQuarto colegas) {
         Colegas.remove(colegas);
     }
@@ -163,7 +161,7 @@ public class Apartamento {
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
         
         double soma = 0;
-        try (Scanner in = new Scanner(System.in)) {
+         Scanner in = new Scanner(System.in);
             System.out.println("-------------------------------");
             System.out.println("| TIPO DESPESA -"+" VALOR DESPESA |");
             System.out.println("-------------------------------");
@@ -186,18 +184,22 @@ public class Apartamento {
             System.out.println("Deseja dividir os igualmente para todos os membros? S/N");
             String escolha = in.nextLine();  
             
-            if (escolha.toLowerCase() == "s"){
+            if (escolha.equalsIgnoreCase("S")){
                 DivideCustos();
             }
+            else{
+                System.out.println("Divisão não realizada!");
+            }
         }
-    }
+    
     public void DivideCustos() {
         
         int qntdColegas = Colegas.size();
         double DivideCustos = DespesaTotal / qntdColegas;
+        System.out.println(DivideCustos);
 
-        for(ColegasDeQuarto c: Colegas){
-            c.setCustoAluno(DivideCustos);
+        for(ColegasDeQuarto aluno: Colegas){
+            aluno.setCustoAluno(DivideCustos);
         }
     
     }

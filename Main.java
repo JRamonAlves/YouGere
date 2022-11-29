@@ -13,7 +13,7 @@ public class Main {
     // GASTOS
     
     Custos moradia = new CustosFixos("Aluguel", 500, ap1);
-    Custos Comodidade = new CustosAdicionais("Net/Agua/Luz", 200, ap1);
+    Custos Comodidade = new CustosAdicionais("Net/Agua/Luz", 500, ap1);
 
     // TAREFAS
 
