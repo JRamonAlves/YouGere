@@ -39,9 +39,10 @@ public class ColegasDeQuarto {
     public void setMoradia(Apartamento moradia) {
         this.moradia = moradia;
     }
+    
     public void setCustoAluno(double custoAluno) {
        this.custoAluno = custoAluno;
-   }
+    }
 
     // FUNÇÕES DO ARRAYLIST
 

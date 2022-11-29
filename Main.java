@@ -13,7 +13,7 @@ public class Main {
     // GASTOS
     
     Custos moradia = new CustosFixos("Aluguel", 500, ap1);
-    Custos Comodidade = new CustosAdicionais("Net/Agua/Luz", 200, ap1);
+    Custos Comodidade = new CustosAdicionais("Net/Agua/Luz", 500, ap1);
 
     // TAREFAS
 
@@ -28,12 +28,12 @@ public class Main {
     ap1.addCustoFixo(moradia);
     ap1.ExibirMoradores();
     ap1.ExibirCustos();
-    ap1.DivideCustos();
-    System.out.println(coleguinha.getCustoAluno());
+    // ap1.DivideCustos();
+    // System.out.println(coleguinha.getCustoAluno());
     
-    coleguinha.addTarefas(limparbanheiro);
-    coleguinha.addTarefas(lavarlouça);
-    coleguinha.ExibirTarefas();
+    // coleguinha.addTarefas(limparbanheiro);
+    // coleguinha.addTarefas(lavarlouça);
+    // coleguinha.ExibirTarefas();
 
     }
 }
