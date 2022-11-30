@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-import javax.sound.sampled.TargetDataLine;
-
 public class Apartamento {
     
     private ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > ();  // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
@@ -15,8 +13,7 @@ public class Apartamento {
     private double DespesaTotal;
 
 
-    //GETS DAS DESPESAS 
-
+//GETS DAS DESPESAS 
     public double getDespesaTotal() {
         return this.DespesaTotal;
     }
@@ -28,8 +25,7 @@ public class Apartamento {
     }
 
 
-    // GETS DOS ARRAYS
-
+// GETS DOS ARRAYS
     public ArrayList<ColegasDeQuarto> getColegas() {
         return Colegas;
     }
@@ -40,10 +36,8 @@ public class Apartamento {
         return Tarefas;
     }
     
-
-    // Métodos para gerenciamento dos Arrays
-    // Colegas do Apartamento
-
+// Métodos para gerenciamento dos Arrays
+ // Colegas do Apartamento
     public void addColegas(ColegasDeQuarto colega) {
         Colegas.add(colega);    // Setando um colega do tipo "ColegasDeQuarto". Como se trata de um arrey o SET nesse caso funcionará usando 
     }                           // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"
@@ -54,8 +48,7 @@ public class Apartamento {
         Colegas.remove(index);
     }
     
-        // Custos
-
+// Custos
     public void addCustoFixo(Custos custo) {
         Custos.add(custo);      // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()
         
@@ -138,8 +131,7 @@ public class Apartamento {
     }
     
 
-    // Métodos particulares da classe "Apartamento"
-
+// Métodos particulares da classe "Apartamento"
     public void ExibirMoradores() {
 
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
@@ -161,46 +153,45 @@ public class Apartamento {
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
         
         double soma = 0;
-         Scanner in = new Scanner(System.in);
-            System.out.println("-------------------------------");
-            System.out.println("| TIPO DESPESA -"+" VALOR DESPESA |");
-            System.out.println("-------------------------------");
+         try (Scanner in = new Scanner(System.in)) {
+            System.out.println("\n  TIPO DESPESA -"+" VALOR DESPESA  ");
+            System.out.println("--------------------------------");
 
             // EXIBE CADA DESPESA DA CLASSE CUSTOS COM UM FOR EACH
             
             for(Custos e: Custos){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
-                System.out.println(i + " " + e.getNomeCusto() + " - R$" + e.getValorCusto() + "");
+                System.out.println(i + ". " + e.getNomeCusto() + " -> VALOR: R$" + e.getValorCusto() + "");
                 soma += e.getValorCusto();
                 i+=1;
             }
 
             // EXIBE A DESPESA TOTAL 
             
-            System.out.println("DESPESA ADICIONAL: R$" + DespesaAdicional);
-            System.out.println("DESPESA FIXA: R$" + DespesaFixa);
-            System.out.println("DESPESA TOTAL: R$" + soma);
+            System.out.println("\n| DESPESA ADICIONAL: R$" + DespesaAdicional);
+            System.out.println("| DESPESA FIXA: R$" + DespesaFixa);
+            System.out.println("| TOTAL EM DEPESA: R$" + soma);
             System.out.println();
 
-            System.out.println("Deseja dividir os igualmente para todos os membros? S/N");
+            System.out.println("Deseja dividir as depespesas igualmente \npara todos os colegas de quarto? \n  'S': PARA REALIZAR DIVISÃO\n  'N': PARA CANCELAR");
             String escolha = in.nextLine();  
             
             if (escolha.equalsIgnoreCase("S")){
                 DivideCustos();
             }
             else{
-                System.out.println("Divisão não realizada!");
+                System.out.println("Operação Cancelada!");
             }
         }
-    
+        }
     public void DivideCustos() {
         
         int qntdColegas = Colegas.size();
         double DivideCustos = DespesaTotal / qntdColegas;
-        System.out.println(DivideCustos);
 
         for(ColegasDeQuarto aluno: Colegas){
             aluno.setCustoAluno(DivideCustos);
         }
+        System.out.println("\n...\nOperação realizada com sucesso!\nR$"+ DivideCustos+" de despesa dividido cada colega de quarto!");
     
     }
     public void ExibirTarefas() {
