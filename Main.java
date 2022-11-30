@@ -21,7 +21,7 @@ public class Main {
     ap1.addColegas(coleguinha);
     ap1.addCustoAdicional(Comodidade);
     ap1.addCustoFixo(moradia);
-    ap1.ExibirMoradores();
+    ap1.Moradores();
     //ap1.ExibirCustos();
     //ap1.DivideCustos();
     //System.out.println(coleguinha.getCustoAluno());

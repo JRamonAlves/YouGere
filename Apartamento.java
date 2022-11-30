@@ -1,17 +1,16 @@
 import java.util.ArrayList;
-import java.util.Random;
+// import java.util.Random;
 import java.util.Scanner;
-
 public class Apartamento {
     
     private ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > ();  // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
     private ArrayList <Custos> Custos = new ArrayList < > ();           // Lista com os custos do apartamento. 
     private ArrayList <Tarefa> Tarefas = new ArrayList < > ();          // Lista com as tarefas do apartamento que precisam ser feitas.
 
-    private double DespesaFixa;                                         // Total das despesas fixas que a moradia possui.
-    private double DespesaAdicional;                                    // Total das despesas adicionais do mês, do periodo de tempo determinado.
-    private double DespesaTotal;
-
+    private double DespesaFixa;        // Total das despesas fixas que a moradia possui.
+    private double DespesaAdicional;   // Total das despesas adicionais do mês, do periodo de tempo determinado.
+    private double DespesaTotal;       // Despesa total
+    Scanner in = new Scanner(System.in);
 
 //GETS DAS DESPESAS 
     public double getDespesaTotal() {
@@ -37,7 +36,7 @@ public class Apartamento {
     }
     
 // Métodos para gerenciamento dos Arrays
- // Colegas do Apartamento
+// Colegas do Apartamento
     public void addColegas(ColegasDeQuarto colega) {
         Colegas.add(colega);    // Setando um colega do tipo "ColegasDeQuarto". Como se trata de um arrey o SET nesse caso funcionará usando 
     }                           // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"
@@ -62,8 +61,7 @@ public class Apartamento {
         DespesaAdicional += ValorCusto;
         DespesaTotal += ValorCusto;
     
-    }
-    
+    } 
     public void deleteCustos(Custos custos) {
         Custos.remove(custos);
     }      
@@ -71,13 +69,12 @@ public class Apartamento {
         Custos.remove(index);
     }
     
-        // Tarefas
-
+// TarefasApartamento.java
     public void addTask(Tarefa task) {
         
         int i = 0;
         
-        Tarefas.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"
+        Tarefas.add(task); 
 
         int numeroTarefas = Tarefas.size();
         int numeroColegas = Colegas.size();
@@ -93,36 +90,26 @@ public class Apartamento {
         }
 
         if (numeroColegas < numeroTarefas) {
-
             try {
-                
                 for (Tarefa tarefa : Tarefas) {
-
                     tarefa.setColega(Colegas.get(i));
                     i = i + 1;
-                
                 }
                 
-            } catch (Exception e) {
-                
+            } catch (Exception e) { 
             }
         }
 
         if (numeroColegas > numeroTarefas) {
 
-            Random random = new Random();
-            int colegaQualquer = random.nextInt(numeroColegas);
+            // Random random = new Random();
+            // int colegaQualquer = random.nextInt(numeroColegas);
 
-            for (ColegasDeQuarto colegasDeQuarto : Colegas) {
+            // for (ColegasDeQuarto colegasDeQuarto : Colegas) { 
                 
-
-                
-                
-            }
-            
+            // }  
         }
     }
-
     public void deleteTarefa(Tarefa tarefa) {
         Tarefas.remove(tarefa);
     }
@@ -132,28 +119,31 @@ public class Apartamento {
     
 
 // Métodos particulares da classe "Apartamento"
-    public void ExibirMoradores() {
+    public void Moradores() {
+        
+            int i = 1; // Variável auxiliar para contagem do ciclo de repetições
+            System.out.println("\nMORADORES REGISTRADOS \n----------------------");
+            for(ColegasDeQuarto e: Colegas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um. 
+                System.out.println(i+". "+ e.getNome()); // Mostra nome de cada colega de quarto cadastrado.
+                i += 1;
+            }
 
-        int i = 1; // Variável auxiliar para contagem do ciclo de repetições
+            System.out.println("Deseja ver informações detalhadas dos moradores?: S/N");
+            String escolhaDetalhes = in.next();
 
-        System.out.println("-----------------------\n\tCOLEGAS");
-        System.out.println("-----------------------");
-
-        for(ColegasDeQuarto e: Colegas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um. 
-
-            System.out.println("\t" +i+"º "+ e.getNome()); // Mostra nome de cada colega de quarto cadastrado.
-            i += 1;
+            if (escolhaDetalhes.equalsIgnoreCase("S")){
+                System.out.println("Digite o numero do morador para ver detalhes: ");
+                int numMorador = in.nextInt();
+                System.out.println("\nNome: "+Colegas.get(numMorador-1).getNome());
+                System.out.println("Contato: "+Colegas.get(numMorador-1).getCelular());
+                System.out.println("Despesa: "+ Colegas.get(numMorador-1).getCustoAluno());
+            }
         }
-        System.out.println("-----------------------");
-        System.out.println();
-
-    }
     public void ExibirCustos() {
 
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
         
         double soma = 0;
-         try (Scanner in = new Scanner(System.in)) {
             System.out.println("\n  TIPO DESPESA -"+" VALOR DESPESA  ");
             System.out.println("--------------------------------");
 
@@ -173,7 +163,7 @@ public class Apartamento {
             System.out.println();
 
             System.out.println("Deseja dividir as depespesas igualmente \npara todos os colegas de quarto? \n  'S': PARA REALIZAR DIVISÃO\n  'N': PARA CANCELAR");
-            String escolha = in.nextLine();  
+            String escolha = in.next();  
             
             if (escolha.equalsIgnoreCase("S")){
                 DivideCustos();
@@ -182,7 +172,7 @@ public class Apartamento {
                 System.out.println("Operação Cancelada!");
             }
         }
-        }
+        
     public void DivideCustos() {
         
         int qntdColegas = Colegas.size();
@@ -209,5 +199,5 @@ public class Apartamento {
             i+=1;
         }  
     }
-
+   
 }
