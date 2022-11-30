@@ -1,4 +1,6 @@
+import java.util.Scanner;
 public class Teste {
+
     public static void main(String [] arsgs) {
     
     // OBJ APARTAMENTO.]
@@ -21,10 +23,10 @@ public class Teste {
     ap1.addColegas(coleguinha);
     ap1.addCustoAdicional(Comodidade);
     ap1.addCustoFixo(moradia);
-    // ap1.ExibirMoradores();
     ap1.ExibirCustos();
+    ap1.Moradores();
     
-    System.out.println(coleguinha.getCustoAluno());
+    // System.out.println(coleguinha.getCustoAluno());
     
     // ap1.ExibirTarefas();
 
