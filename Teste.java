@@ -24,7 +24,7 @@ public class Teste {
     // ap1.ExibirMoradores();
     ap1.ExibirCustos();
     
-    //System.out.println(coleguinha.getCustoAluno());
+    System.out.println(coleguinha.getCustoAluno());
     
     // ap1.ExibirTarefas();
 
