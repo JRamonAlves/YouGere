@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-import javax.sound.sampled.TargetDataLine;
-
 public class Apartamento {
     
     private ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > ();  // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
@@ -12,7 +10,7 @@ public class Apartamento {
 
     private double DespesaFixa;                                         // Total das despesas fixas que a moradia possui.
     private double DespesaAdicional;                                    // Total das despesas adicionais do mês, do periodo de tempo determinado.
-    private double DespesaTotal;
+    private double DespesaTotal;                                        // Soma das despesas, fixas e adicionais, parar dar o total
 
 
     //GETS DAS DESPESAS 
@@ -99,7 +97,7 @@ public class Apartamento {
             }
         }
 
-        if (numeroColegas < numeroTarefas) {
+        else if (numeroColegas < numeroTarefas) {
 
             try {
                 
@@ -115,7 +113,7 @@ public class Apartamento {
             }
         }
 
-        if (numeroColegas > numeroTarefas) {
+        else if (numeroColegas > numeroTarefas) {
 
             Random random = new Random();
             int colegaQualquer = random.nextInt(numeroColegas);

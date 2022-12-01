@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String [] arsgs) {
     
-    // OBJ APARTAMENTO.]
+    // OBJ APARTAMENTO.
 
     Apartamento ap1 = new Apartamento();
     
