@@ -1,4 +1,3 @@
-import java.util.Scanner;
 public class Teste {
 
     public static void main(String [] arsgs) {
@@ -15,20 +14,20 @@ public class Teste {
     Custos Comodidade = new CustosAdicionais("Net/Agua/Luz", 500, ap1);
 
     // TAREFAS
-    // Tarefa lavarlouça = new Tarefa("Lavar a louça", "Todo o dia", "Todo dia", ap1);
-    // Tarefa limparbanheiro = new Tarefa("Limpar banheiro", "Durante a manhã", "Até a noite", ap1);
+    Tarefa lavarlouça = new Tarefa("Lavar a louça", "Todo o dia", "Todo dia", ap1);
+    Tarefa limparbanheiro = new Tarefa("Limpar banheiro", "Durante a manhã", "Até a noite", ap1);
 
     // TESTE DOS MÉTODOS DA CLASSE APARTAMENTO
-    ap1.addColegas(coleguinha2);
-    ap1.addColegas(coleguinha);
-    ap1.addCustoAdicional(Comodidade);
-    ap1.addCustoFixo(moradia);
-    ap1.ExibirCustos();
-    ap1.ExibirMoradores();
+    // ap1.addColegas(coleguinha2);
+    // ap1.addColegas(coleguinha);
+    // ap1.addCustoAdicional(Comodidade);
+    // ap1.addCustoFixo(moradia);
+    // ap1.ExibirCustos();
+    // ap1.ExibirMoradores();
     
-    // System.out.println(coleguinha.getCustoAluno());
+    System.out.println(coleguinha.getCustoAluno());
     
-    // ap1.ExibirTarefas();
+    ap1.ExibirTarefas();
 
     }
 }

@@ -1,6 +1,8 @@
 public class Main {
     public static void main(String [] arsgs) {
     
+    System.out.println("Bem-vindo");
+    
     // OBJ APARTAMENTO.
 
     Apartamento ap1 = new Apartamento();
@@ -19,13 +21,15 @@ public class Main {
     Tarefa limparbanheiro = new Tarefa("Limpar banheiro", "Durante a manhã", "Até a noite", ap1);
     Tarefa fazerfeira = new Tarefa("Fazer a feira", "Todo mês", "Durante o mês", ap1);
 
+
     // TESTE DOS MÉTODOS DA CLASSE APARTAMENTO
 
-    System.out.println(ap1.getCustos().size());
+    // System.out.println(ap1.getCustos().size());
 
-    ap1.ExibirCustos();
-    ap1.ExibirMoradores();
+    // ap1.ExibirCustos();
+    // ap1.ExibirMoradores();
     ap1.ExibirTarefas();
+    System.out.println(ap1.indexTarefa);
 
     }
 }

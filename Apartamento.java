@@ -39,6 +39,7 @@ public class Apartamento {
     
 
     // Métodos para gerenciamento dos Arrays
+    
     // Colegas do Apartamento
 
     public void addColegas(ColegasDeQuarto colega) {
@@ -78,6 +79,7 @@ public class Apartamento {
     
         // Tarefas
 
+    public int indexTarefa;
     public void addTask(Tarefa task) {
                 
         Tarefas.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"
@@ -86,17 +88,18 @@ public class Apartamento {
 
         int numeroTarefas = Tarefas.size(); // Contagem do numero de tarefas e de colegas para que assim as tarefas sejam
         int numeroColegas = Colegas.size(); // adicionadas de acordo.
-        int index = random.nextInt(numeroColegas - 1); // Iterável adicional utilizado nas condicionais a seguir
+        indexTarefa = random.nextInt(numeroColegas); // Iterável adicional utilizado nas condicionais a seguir
 
         for (int i = 0; i < numeroTarefas; i++) {
 
-            Tarefas.get(i).setColega(Colegas.get(index));
-            index = index + 1;
+            Tarefas.get(i).setColega(Colegas.get(indexTarefa));
+            indexTarefa = indexTarefa + 1;
 
-            if (index == numeroColegas) { 
-                index = 0;
-            }
+            if (indexTarefa == numeroColegas) { 
+                indexTarefa = 0;
+            }            
         }
+
     }
 
     public void deleteTarefa(Tarefa tarefa) {
