@@ -12,6 +12,7 @@ public class ColegasDeQuarto {
         this.nome = nomeColega;
         this.celular = celularDoColega;
         this.moradia = Apartamento;
+        Apartamento.addColegas(this);
     
     }
 
@@ -39,7 +40,6 @@ public class ColegasDeQuarto {
     public void setMoradia(Apartamento moradia) {
         this.moradia = moradia;
     }
-    
     public void setCustoAluno(double custoAluno) {
        this.custoAluno = custoAluno;
     }
@@ -57,7 +57,6 @@ public class ColegasDeQuarto {
     public void addTarefas(Tarefa Tarefa) {
 
         tarefas.add(Tarefa);
-        Tarefa.setColega(null);
 
     }
 

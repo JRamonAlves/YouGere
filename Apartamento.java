@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Apartamento {
@@ -79,52 +78,43 @@ public class Apartamento {
         // Tarefas
 
     public void addTask(Tarefa task) {
-        
-        int i = 0;
-        
+                
         Tarefas.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"
 
-        int numeroTarefas = Tarefas.size();
-        int numeroColegas = Colegas.size();
+        int numeroTarefas = Tarefas.size(); // Contagem do numero de tarefas e de colegas para que assim as tarefas sejam
+        int numeroColegas = Colegas.size(); // adicionadas de acordo.
+        int index = 0; // Iterável adicional utilizado nas condicionais a seguir
 
-        if (numeroColegas == numeroTarefas) {
+        if (numeroColegas == numeroTarefas) { // Primeira condicional, caso o numero de tarefas e de colegas seja igual, ele irá adicionar as tarefas de acordo com o Array de Colegas, cada colega receberá uma tarefa.
 
             for (ColegasDeQuarto colegas : Colegas) {
 
-                colegas.addTarefas(Tarefas.get(i));
-                i = i + 1;
+                Tarefas.get(index).setColega(colegas);
+                index = index + 1;
                 
             }
         }
 
-        else if (numeroColegas < numeroTarefas) {
-
-            try {
+        else if (numeroColegas < numeroTarefas) { // Segunda condicional, caso o numero de tarefas seja maior que o numero de colegas, ele utilizará um ciclo onde cada tarefa recebe um colega e quando o numero de colegas acabar ele irá zerar o iteravel, fazendo o ciclo continuar.
+                            
+            for (int i = 0; i < numeroTarefas; i++) {
                 
-                for (Tarefa tarefa : Tarefas) {
+                Tarefas.get(i).setColega(Colegas.get(index));
 
-                    tarefa.setColega(Colegas.get(i));
-                    i = i + 1;
-                
+                index = index + 1;
+
+                if (index == numeroColegas) { 
+                    index = 0;
                 }
-                
-            } catch (Exception e) {
-                
             }
         }
 
-        else if (numeroColegas > numeroTarefas) {
+        else if (numeroColegas > numeroTarefas) { // Terceira condicional, caso o numero de tarefas seja menor, ele irá utilizar o array de Tarefas para alocar cada uma a seu respectivo colega em ordem.
 
-            Random random = new Random();
-            int colegaQualquer = random.nextInt(numeroColegas);
-
-            for (ColegasDeQuarto colegasDeQuarto : Colegas) {
-                
-
-                
-                
+            for (Tarefa tarefa : Tarefas) {
+                tarefa.setColega(Colegas.get(index));
+                index = index + 1;
             }
-            
         }
     }
 
@@ -150,7 +140,6 @@ public class Apartamento {
             System.out.println("\t" +i+"º "+ e.getNome()); // Mostra nome de cada colega de quarto cadastrado.
             i += 1;
         }
-        System.out.println("-----------------------");
         System.out.println();
 
     }
@@ -215,6 +204,7 @@ public class Apartamento {
             System.out.println(i + "º " + e.getNome_tarefa() + " - " + e.getColega().getNome());
             i+=1;
         }  
+        System.out.println();
     }
 
 }

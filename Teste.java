@@ -24,7 +24,7 @@ public class Teste {
     ap1.addCustoAdicional(Comodidade);
     ap1.addCustoFixo(moradia);
     ap1.ExibirCustos();
-    ap1.Moradores();
+    ap1.ExibirMoradores();
     
     // System.out.println(coleguinha.getCustoAluno());
     
