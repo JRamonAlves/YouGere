@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Apartamento {
@@ -81,39 +82,19 @@ public class Apartamento {
                 
         Tarefas.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"
 
+        Random random = new Random();
+
         int numeroTarefas = Tarefas.size(); // Contagem do numero de tarefas e de colegas para que assim as tarefas sejam
         int numeroColegas = Colegas.size(); // adicionadas de acordo.
-        int index = 0; // Iterável adicional utilizado nas condicionais a seguir
+        int index = random.nextInt(numeroColegas - 1); // Iterável adicional utilizado nas condicionais a seguir
 
-        if (numeroColegas == numeroTarefas) { // Primeira condicional, caso o numero de tarefas e de colegas seja igual, ele irá adicionar as tarefas de acordo com o Array de Colegas, cada colega receberá uma tarefa.
+        for (int i = 0; i < numeroTarefas; i++) {
 
-            for (ColegasDeQuarto colegas : Colegas) {
+            Tarefas.get(i).setColega(Colegas.get(index));
+            index = index + 1;
 
-                Tarefas.get(index).setColega(colegas);
-                index = index + 1;
-                
-            }
-        }
-
-        else if (numeroColegas < numeroTarefas) { // Segunda condicional, caso o numero de tarefas seja maior que o numero de colegas, ele utilizará um ciclo onde cada tarefa recebe um colega e quando o numero de colegas acabar ele irá zerar o iteravel, fazendo o ciclo continuar.
-                            
-            for (int i = 0; i < numeroTarefas; i++) {
-                
-                Tarefas.get(i).setColega(Colegas.get(index));
-
-                index = index + 1;
-
-                if (index == numeroColegas) { 
-                    index = 0;
-                }
-            }
-        }
-
-        else if (numeroColegas > numeroTarefas) { // Terceira condicional, caso o numero de tarefas seja menor, ele irá utilizar o array de Tarefas para alocar cada uma a seu respectivo colega em ordem.
-
-            for (Tarefa tarefa : Tarefas) {
-                tarefa.setColega(Colegas.get(index));
-                index = index + 1;
+            if (index == numeroColegas) { 
+                index = 0;
             }
         }
     }
@@ -125,7 +106,6 @@ public class Apartamento {
         Tarefas.remove(index);
     }
     
-
     // Métodos particulares da classe "Apartamento"
 
     public void ExibirMoradores() {
