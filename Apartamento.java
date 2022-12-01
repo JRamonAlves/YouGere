@@ -12,7 +12,6 @@ public class Apartamento {
     private double DespesaAdicional;                                    // Total das despesas adicionais do mês, do periodo de tempo determinado.
     private double DespesaTotal;
 
-
     //GETS DAS DESPESAS 
 
     public double getDespesaTotal() {
@@ -45,6 +44,7 @@ public class Apartamento {
     public void addColegas(ColegasDeQuarto colega) {
         Colegas.add(colega);    // Setando um colega do tipo "ColegasDeQuarto". Como se trata de um arrey o SET nesse caso funcionará usando 
     }                           // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"
+    
     public void deleteColegas(ColegasDeQuarto colegas) {
         Colegas.remove(colegas);
     }
@@ -128,7 +128,7 @@ public class Apartamento {
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
         
         double soma = 0;
-         Scanner in = new Scanner(System.in);
+            Scanner in = new Scanner(System.in);
             System.out.println("-------------------------------");
             System.out.println("| TIPO DESPESA -"+" VALOR DESPESA |");
             System.out.println("-------------------------------");
