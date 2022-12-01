@@ -10,7 +10,7 @@ public class Apartamento {
 
     private double DespesaFixa;                                         // Total das despesas fixas que a moradia possui.
     private double DespesaAdicional;                                    // Total das despesas adicionais do mês, do periodo de tempo determinado.
-    private double DespesaTotal;                                        // Soma das despesas, fixas e adicionais, parar dar o total
+    private double DespesaTotal;
 
 
     //GETS DAS DESPESAS 
