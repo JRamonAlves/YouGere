@@ -6,7 +6,7 @@ public class Apartamento {
 
     private String nome;
     private String endereco;
-    private String telefone;
+    private int numeroAp;
     
     private ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > ();  // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
     private ArrayList <Custos> Custos = new ArrayList < > ();           // Lista com os custos do apartamento. 
@@ -18,20 +18,10 @@ public class Apartamento {
 
     //CONSTRUTORES
 
-    Apartamento(String endereco){
-        this.endereco = endereco;
-
-    }
-    Apartamento(String nome, String endereco){
-
+    Apartamento(String nome, String endereco, int numero){
         this.nome = nome;
         this.endereco = endereco;
-
-    }
-    Apartamento(String nome, String endereco, String telefone){
-        this.nome = nome;
-        this.endereco = endereco;
-        this.telefone = telefone;
+        this.numeroAp = numero;
     }
 
     //GETS E SETS DOS ATRIBUTOS SIMPLES 
@@ -42,8 +32,8 @@ public class Apartamento {
     public String getEndereco() {
         return endereco;
     }
-    public String getTelefone() {
-        return telefone;
+    public int getNumeroAp() {
+        return numeroAp;
     }
 
     public void setNome(String nome) {
@@ -52,8 +42,8 @@ public class Apartamento {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setNumeroAp(int telefone) {
+        this.numeroAp = telefone;
     }
 
     //GETS DOS ATRIBUTOS 
