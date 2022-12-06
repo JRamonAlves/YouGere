@@ -3,6 +3,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Apartamento {
+
+    private String nome;
+    private String endereco;
+    private String telefone;
     
     private ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > ();  // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
     private ArrayList <Custos> Custos = new ArrayList < > ();           // Lista com os custos do apartamento. 
@@ -12,7 +16,43 @@ public class Apartamento {
     private double DespesaAdicional;                                    // Total das despesas adicionais do mês, do periodo de tempo determinado.
     private double DespesaTotal;
 
-    //GETS DAS DESPESAS 
+    //CONSTRUTORES
+
+    Apartamento(String nome, String endereco){
+
+        this.nome = nome;
+        this.endereco = endereco;
+
+    }
+    Apartamento(String nome, String endereco, String telefone){
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
+    }
+
+    //GETS E SETS DOS ATRIBUTOS SIMPLES 
+
+    public String getNome() {
+        return nome;
+    }
+    public String getEndereco() {
+        return endereco;
+    }
+    public String getTelefone() {
+        return telefone;
+    }
+    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    //GETS DOS ATRIBUTOS 
 
     public double getDespesaTotal() {
         return this.DespesaTotal;
@@ -23,7 +63,6 @@ public class Apartamento {
     public double getDespesaAdicional() {
         return DespesaAdicional;
     }
-
 
     // GETS DOS ARRAYS
 
@@ -37,7 +76,6 @@ public class Apartamento {
         return Tarefas;
     }
     
-
     // Métodos para gerenciamento dos Arrays
     
     // Colegas do Apartamento

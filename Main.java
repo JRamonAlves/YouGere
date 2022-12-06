@@ -1,35 +1,33 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String [] arsgs) {
     
-    System.out.println("Bem-vindo");
-    
-    // OBJ APARTAMENTO.
+        System.out.println("------------------------");
+        System.out.println("\tBem-vindo ao YouGere");
+        System.out.println();
+        System.out.println("O que deseja fazer hoje ?");
+        System.out.println("Digite 1 se deseja criar um novo apartamento para gerenciar");
+        System.out.println("Digite 2 se deseja criar um novo perfil para um colega de quarto");
+        System.out.println("Digite 3 se deseja criar uma nova tarefa para algum apartamento");
+        System.out.println("Digite 4 se deseja criar um novo gasto para esse apartamento");
+        System.out.println("Digite 5 se deseja acessar algum apartamento existente");
+        
+        Scanner scan = new Scanner(System.in);
+        int resposta = scan.nextInt();
+        scan.close();
 
-    Apartamento ap1 = new Apartamento();
-    
-    // COLEGAS DE QUARTO - CRIAR OBJETO PASSANDO AS INFOS EM UM CONSTRUTOR 
-    ColegasDeQuarto coleguinha = new ColegasDeQuarto("Lukas", 872087798, ap1);
-    ColegasDeQuarto coleguinha2 = new ColegasDeQuarto("Ramon", 872087758, ap1);
-    ColegasDeQuarto coleguinha3 = new ColegasDeQuarto("Vitor", 872087758, ap1);
-    
-    // GASTOS
-    Custos moradia = new CustosFixos("Aluguel", 500, ap1);
-    Custos Comodidade = new CustosAdicionais("Net/Agua/Luz", 500, ap1);
+        if (resposta == 1) {
 
-    // TAREFAS
-    Tarefa lavarlouça = new Tarefa("Lavar a louça", "Todo o dia", "Todo dia", ap1);
-    Tarefa limparbanheiro = new Tarefa("Limpar banheiro", "Durante a manhã", "Até a noite", ap1);
-    Tarefa fazerfeira = new Tarefa("Fazer a feira", "Todo mês", "Durante o mês", ap1);
+            System.out.println("Qual será o nome do apartamento ?");
+            String nomeApartamento = scan.nextLine();
+            System.out.println("Qual será");
+            scan.close();
 
+            Apartamento apartamento = 
+            
+        }
 
-    // TESTE DOS MÉTODOS DA CLASSE APARTAMENTO
-
-    // System.out.println(ap1.getCustos().size());
-
-    // ap1.ExibirCustos();
-    // ap1.ExibirMoradores();
-    ap1.ExibirTarefas();
-    System.out.println(ap1.indexTarefa);
 
     }
 }
