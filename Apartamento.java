@@ -121,17 +121,24 @@ public class Apartamento {
     
         // Tarefas
 
-    public int indexTarefa;
+    private int indexTarefa;
+    private Boolean primeiro = true;
+    
     public void addTask(Tarefa task) {
-                
+                    
         Tarefas.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"
-
-        Random random = new Random();
-
+    
         int numeroTarefas = Tarefas.size(); // Contagem do numero de tarefas e de colegas para que assim as tarefas sejam
         int numeroColegas = Colegas.size(); // adicionadas de acordo.
-        indexTarefa = random.nextInt(numeroColegas); // Iterável adicional utilizado nas condicionais a seguir
+    
+        if (primeiro == true) {
 
+            Random random = new Random();
+            indexTarefa = random.nextInt(numeroColegas); // Iterável adicional utilizado nas condicionais a seguir    
+            primeiro = false;        
+            
+        }
+        
         for (int i = 0; i < numeroTarefas; i++) {
 
             Tarefas.get(i).setColega(Colegas.get(indexTarefa));
@@ -141,7 +148,7 @@ public class Apartamento {
                 indexTarefa = 0;
             }            
         }
-
+    
     }
 
     public void deleteTarefa(Tarefa tarefa) {
