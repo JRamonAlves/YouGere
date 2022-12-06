@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String [] arsgs) {
-    
+
         System.out.println("------------------------");
         System.out.println("\tBem-vindo ao YouGere");
         System.out.println();
@@ -19,13 +19,16 @@ public class Main {
 
         if (resposta == 1) {
 
-            System.out.println("Qual será o nome do apartamento ?");
-            String nomeApartamento = scan.nextLine();
-            System.out.println("Qual será o endereço desse apartamento ");
+            System.out.println("Qual será o endereço desse apartamento ?");
+            String enderecoApartamento = scan.nextLine();
             scan.close();
 
-            Apartamento apartamento = 
+            Apartamento apartamento = new Apartamento(enderecoApartamento);
             
+        }else if(resposta == 2){
+
+            System.out.println("Qual será ?");
+
         }
 
 
