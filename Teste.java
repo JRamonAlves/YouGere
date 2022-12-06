@@ -29,7 +29,7 @@ public class Teste {
     // ap1.ExibirCustos();
     // ap1.ExibirMoradores();
     ap1.ExibirTarefas();
-    System.out.println(ap1.indexTarefa);
+    // System.out.println(ap1.indexTarefa);
 
     }
 }
