@@ -5,7 +5,7 @@ public class Teste {
     
     // OBJ APARTAMENTO.
 
-    Apartamento ap1 = new Apartamento();
+    Apartamento ap1 = new Apartamento("Casa ads", "Unifip, Bloco H, sala H8");
     
     // COLEGAS DE QUARTO - CRIAR OBJETO PASSANDO AS INFOS EM UM CONSTRUTOR 
     ColegasDeQuarto coleguinha = new ColegasDeQuarto("Lukas", 872087798, ap1);

@@ -18,6 +18,10 @@ public class Apartamento {
 
     //CONSTRUTORES
 
+    Apartamento(String endereco){
+        this.endereco = endereco;
+
+    }
     Apartamento(String nome, String endereco){
 
         this.nome = nome;
@@ -41,7 +45,7 @@ public class Apartamento {
     public String getTelefone() {
         return telefone;
     }
-    
+
     public void setNome(String nome) {
         this.nome = nome;
     }

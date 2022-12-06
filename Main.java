@@ -21,7 +21,7 @@ public class Main {
 
             System.out.println("Qual será o nome do apartamento ?");
             String nomeApartamento = scan.nextLine();
-            System.out.println("Qual será");
+            System.out.println("Qual será o endereço desse apartamento ");
             scan.close();
 
             Apartamento apartamento = 
