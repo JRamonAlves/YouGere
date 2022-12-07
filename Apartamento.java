@@ -170,34 +170,35 @@ public class Apartamento {
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
         
         double soma = 0;
-            Scanner in = new Scanner(System.in);
-            System.out.println("-------------------------------");
-            System.out.println("| TIPO DESPESA -"+" VALOR DESPESA |");
-            System.out.println("-------------------------------");
+            try (Scanner in = new Scanner(System.in)) {
+                System.out.println("-------------------------------");
+                System.out.println("| TIPO DESPESA -"+" VALOR DESPESA |");
+                System.out.println("-------------------------------");
 
-            // EXIBE CADA DESPESA DA CLASSE CUSTOS COM UM FOR EACH
-            
-            for(Custos e: Custos){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
-                System.out.println(i + " " + e.getNomeCusto() + " - R$" + e.getValorCusto() + "");
-                soma += e.getValorCusto();
-                i+=1;
-            }
+                // EXIBE CADA DESPESA DA CLASSE CUSTOS COM UM FOR EACH
+                
+                for(Custos e: Custos){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
+                    System.out.println(i + " " + e.getNomeCusto() + " - R$" + e.getValorCusto() + "");
+                    soma += e.getValorCusto();
+                    i+=1;
+                }
 
-            // EXIBE A DESPESA TOTAL 
-            
-            System.out.println("DESPESA ADICIONAL: R$" + DespesaAdicional);
-            System.out.println("DESPESA FIXA: R$" + DespesaFixa);
-            System.out.println("DESPESA TOTAL: R$" + soma);
-            System.out.println();
+                // EXIBE A DESPESA TOTAL 
+                
+                System.out.println("DESPESA ADICIONAL: R$" + DespesaAdicional);
+                System.out.println("DESPESA FIXA: R$" + DespesaFixa);
+                System.out.println("DESPESA TOTAL: R$" + soma);
+                System.out.println();
 
-            System.out.println("Deseja dividir os igualmente para todos os membros? S/N");
-            String escolha = in.nextLine();  
-            
-            if (escolha.equalsIgnoreCase("S")){
-                DivideCustos();
-            }
-            else{
-                System.out.println("Divisão não realizada!");
+                System.out.println("Deseja dividir os igualmente para todos os membros? S/N");
+                String escolha = in.nextLine();  
+                
+                if (escolha.equalsIgnoreCase("S")){
+                    DivideCustos();
+                }
+                else{
+                    System.out.println("Divisão não realizada!");
+                }
             }
         }
     
