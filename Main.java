@@ -19,35 +19,41 @@ public class Main {
         // nome = JOptionPane.showInputDialog("Bem-vindo ao YouGere\n| O que deseja fazer? Digite o número correspondente:\n[1] Criar um novo apartamento para gerenciar\n[2] Acessar algum apartamento existente");
         
         System.out.println("\tBem-vindo ao YouGere");
-        System.out.println();
-        System.out.println("| O que deseja fazer? Digite o número correspondente:\n");
+        System.out.println("\n| O que deseja fazer? Digite o número correspondente:\n");
         System.out.println("[1] Criar um novo apartamento para gerenciar");
-        System.out.println("[2] Acessar algum apartamento existente");
+        System.out.println("[2] Acessar algum apartamento existente\n[3] Sair");
         System.out.println("-------------------------------------------------------");
         
         
-        int resposta = input.nextInt();
+        String escolha = input.next();
   
-        if(resposta == 1){
+        if(escolha.equals("1")){
           System.out.println("A opção escolhida: 1. [...criando apartamento]");
           
           // preenchendo informações para instância de criação do AP
-          System.out.println("Digite o numero do apartamento: ");
+          System.out.print("Digite o numero do apartamento: ");
           int numAp = input.nextInt();
+          
+          input.nextLine();
+          
+          // OBS: NEXT LINE NÃO DÁ ERRO AO DIGITAR INTEIRO
+          System.out.print("Digite o nome do apartamento: ");
+          String nomeAp = input.next();
 
-          System.out.println("\n Digite o nome do apartamento: ");
-          String nomeAp = input.nextLine();
-
-          System.out.println("Digite o endereço do apartamento: ");
-          String enderecoAp = input.nextLine();
+          System.out.print("Digite o endereço do apartamento: ");
+          String enderecoAp = input.next();
 
           Apartamento ap = new Apartamento(nomeAp, enderecoAp, numAp);
-          System.out.println("| Apartamento criado com sucesso! |");
+          System.out.println("Apartamento criado com sucesso!\n\n");
           
         }
 
-        else if(resposta == 2){
+        else if(escolha.equals("2")){
           System.out.println("Else if ");
+        }
+        else{
+          System.out.println("Saindo... ");
+          break;
         }
       }
     }
