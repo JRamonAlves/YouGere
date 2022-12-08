@@ -38,13 +38,15 @@ public class Main {
           
           // OBS: NEXT LINE NÃO DÁ ERRO AO DIGITAR INTEIRO
           System.out.print("Digite o nome do apartamento: ");
-          String nomeAp = input.next();
+          String nomeAp = input.nextLine();
 
           System.out.print("Digite o endereço do apartamento: ");
-          String enderecoAp = input.next();
+          String enderecoAp = input.nextLine();
 
           Apartamento ap = new Apartamento(nomeAp, enderecoAp, numAp);
           System.out.println("Apartamento criado com sucesso!\n\n");
+          System.out.println(ap.getNome() +"\n"+ ap.getNumeroAp() +"\n"+ ap.getEndereco());
+          break;
           
         }
 
