@@ -112,6 +112,7 @@ public class Apartamento {
         // Tarefas
 
     private int indexTarefa;
+    private int indexColega;
     private Boolean primeiro = true;
     
     public void addTask(Tarefa task) {
@@ -133,10 +134,19 @@ public class Apartamento {
 
             Tarefas.get(i).setColega(Colegas.get(indexTarefa));
             indexTarefa = indexTarefa + 1;
+            indexColega = indexColega + 1;
 
             if (indexTarefa == numeroColegas) { 
                 indexTarefa = 0;
             }            
+
+            if (indexColega == numeroColegas) {
+                
+                indexColega = 0;
+                Random random = new Random();
+                indexTarefa = random.nextInt(numeroColegas); // Iterável adicional utilizado nas condicionais a seguir    
+            
+            }
         }
     
     }
