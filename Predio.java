@@ -11,10 +11,8 @@ public class Predio {
         predio.add(var);
     }
     public void exibirAps(){
-        
         int contador = 1;
         System.out.println("\n*** APARTAMENTOS CADASTRADOS NO PREDIO ***");
-
         for (Apartamento apartamento : predio) {
             System.out.println("| NUMERO DO AP:" + apartamento.getNumeroAp()+ "\n| DESCRIÇÃO DO AP: "+ apartamento.getNome()+ "\n| ENDEREÇO: "+apartamento.getEndereco()+"\n");
             contador++;
