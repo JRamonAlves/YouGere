@@ -88,15 +88,15 @@ public class Main {
                       System.out.println("[2] ADD TAREFAS");
                       System.out.println("[3] ADD CUSTO FIXO");
                       System.out.println("[4] ADD CUSTO ADICIONAL");
-                      System.out.println("[6] MOSTRAR MORADORES DO AP");
-                      System.out.println("[5] Sair");
+                      System.out.println("[5] MOSTRAR MORADORES DO AP");
+                      System.out.println("[6] Sair");
                       int aplocal = input.nextInt();
                       
                       
-                      if(aplocal == 6 && apartamento.getColegas().isEmpty()){
+                      if(aplocal == 5 && apartamento.getColegas().isEmpty()){
                         System.out.println("\n(error) Não há colegas cadatrados.\n");
                       }
-                      else if(aplocal == 6 && apartamento.getColegas().isEmpty() == false){
+                      else if(aplocal == 5 && apartamento.getColegas().isEmpty() == false){
                         apartamento.ExibirMoradores();
                       }
                       
@@ -178,7 +178,7 @@ public class Main {
                             String sairad = input.nextLine();
                       
                             break;
-                        case 5:
+                        case 6:
                             segundoWhile = false;
                             break;
 
