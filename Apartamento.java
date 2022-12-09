@@ -76,8 +76,6 @@ public class Apartamento {
     public void addColegas(ColegasDeQuarto colega) {
         Colegas.add(colega);    
     }                           
-    
-
     public void deleteColegas(ColegasDeQuarto colegas) {
         Colegas.remove(colegas);
     }
@@ -115,52 +113,21 @@ public class Apartamento {
                     
         Tarefas.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"
     
-        int numeroTarefas = Tarefas.size(); // Contagem do numero de tarefas e de colegas para que assim as tarefas sejam
-        int numeroColegas = Colegas.size(); // adicionadas de acordo.
-    
-        if (primeiro == true) {
-
-            Random random = new Random();
-            indexTarefa = random.nextInt(numeroColegas); // Iterável adicional utilizado nas condicionais a seguir    
-            primeiro = false;        
-            
-        }
-        
-        for (int i = 0; i < numeroTarefas; i++) {
-
-            Tarefas.get(i).setColega(Colegas.get(indexTarefa));
-            indexTarefa = indexTarefa + 1;
-            indexColega = indexColega + 1;
-
-            if (indexTarefa == numeroColegas) { 
-                indexTarefa = 0;
-            }            
-
-            if (indexColega == numeroColegas) {
-                
-                indexColega = 0;
-                Random random = new Random();
-                indexTarefa = random.nextInt(numeroColegas); // Iterável adicional utilizado nas condicionais a seguir    
-            
-            }
-        }
-    
     }
+    
 
-    private int indexTarefa;
-    private int indexColega;
-    private Boolean primeiro = true;
+    int indexColega = -1;
+    int indexTarefa;
 
-    public void distribuiTarefas() {
+    public void distribuiTarefas(){
 
         int numeroTarefas = Tarefas.size(); // Contagem do numero de tarefas e de colegas para que assim as tarefas sejam
         int numeroColegas = Colegas.size(); // adicionadas de acordo.
     
-        if (primeiro == true) {
+        if (indexTarefa == -1) {
 
             Random random = new Random();
             indexTarefa = random.nextInt(numeroColegas); // Iterável adicional utilizado nas condicionais a seguir    
-            primeiro = false;        
             
         }
         
@@ -171,9 +138,7 @@ public class Apartamento {
             indexColega = indexColega + 1;
 
             if (indexTarefa == numeroColegas) { 
-
                 indexTarefa = 0;
-                
             }            
 
             if (indexColega == numeroColegas) {
@@ -184,7 +149,7 @@ public class Apartamento {
             
             }
         }
-        
+
     }
 
     public void deleteTarefa(Tarefa tarefa) {
@@ -206,7 +171,7 @@ public class Apartamento {
 
             System.out.println("["+i+"]\n| NOME DO COLEGA: "+ morador.getNome()+"\n| CONTATO: "+morador.getCelular()+"\n| CUSTOS: "+morador.getCustoAluno()+"\n"); // Mostra nome de cada colega de quarto cadastrado.
             morador.ExibirTarefas();
-            System.out.println("\n*");
+            System.out.println("\n");
             i += 1;
         }
         System.out.println("\n\n");

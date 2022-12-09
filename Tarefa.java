@@ -42,8 +42,4 @@ public class Tarefa {
         this.colega = colega;
         colega.addTarefas(this);
     }
-    public void setApartamento(Apartamento apartamento) {
-        this.apartamento = apartamento;
-        apartamento.addTask(this);
-    }    
 }
