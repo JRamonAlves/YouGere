@@ -25,7 +25,11 @@ public class Apartamento {
     }
 
     //GETS E SETS DOS ATRIBUTOS SIMPLES 
-
+    public void setCustos(double var){
+        DespesaFixa = var;
+        DespesaAdicional = var;
+        DespesaTotal = var;
+    }
     public String getNome() {
         return nome;
     }
@@ -84,7 +88,9 @@ public class Apartamento {
     }
     
         // Custos
-
+    public void setCustos(ArrayList<Custos> custos) {
+        Custos = custos;
+    }
     public void addCustoFixo(Custos custo) {
         Custos.add(custo);      // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()
         

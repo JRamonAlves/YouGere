@@ -98,21 +98,21 @@ public class Main {
                       System.out.println("\n\n| AP NÚMERO: "+apartamento.getNumeroAp()+" | Nome AP: "+apartamento.getNome()+" | CUSTO TOTAL: "+apartamento.getDespesaTotal()+" |");
                       System.out.println("OPÇÕES DE GERENCIAMENTO: ");
                       System.out.println();
-                      System.out.println("[1] ADD COLEGA");
-                      System.out.println("[2] ADD TAREFAS");
-                      System.out.println("[3] ADD CUSTO FIXO");
-                      System.out.println("[4] ADD CUSTO ADICIONAL");
-                      System.out.println("\n[5] MOSTRAR MORADORES DO AP");
-                      System.out.println("[6] MOSTRAR TAREFAS DO AP");
-                      System.out.println("[7] DISTRIBUIR TAREFAS");
-                      System.out.println("\n[9] DELETAR COLEGA");
-                      System.out.println("[10] DELETAR TAREFAS");
-                      System.out.println("[11] ZERAR CUSTOS");
-                      System.out.println("[12] Sair");
+                      System.out.println("[01] ADD COLEGA");
+                      System.out.println("[02] ADD TAREFAS");
+                      System.out.println("[03] ADD CUSTO FIXO");
+                      System.out.println("[04] ADD CUSTO ADICIONAL");
+                      System.out.println("\n[05] MOSTRAR MORADORES DO AP");
+                      System.out.println("[06] MOSTRAR TAREFAS DO AP");
+                      System.out.println("[07] DISTRIBUIR TAREFAS");
+                      System.out.println("\n[08] DELETAR COLEGA");
+                      System.out.println("[09] DELETAR TAREFAS");
+                      System.out.println("[10] ZERAR CUSTOS");
+                      System.out.println("[11] Sair");
                       int aplocal = input.nextInt();
  
                       switch (aplocal) {
-                        case 1:
+                        case 1: // ADD COLEGA
   
                           System.out.println("Digite as infos para cadastrar COLEGA:\n");
                           
@@ -128,7 +128,7 @@ public class Main {
                           break;
                           // FIM CASE 1
   
-                        case 2:
+                        case 2: // ADD TAREFAS
   
                           // DADOS TECLADO
                           System.out.println("Digite as infos para cadastrar uma TAREFA:\n");
@@ -154,7 +154,7 @@ public class Main {
 
                           break;
   
-                        case 3:
+                        case 3: // ADD CUSTO FIXO
   
                           // DADOS TECLADO
                           System.out.println("| DIGITE AS INFOS PARA CADASTRAR UM CUSTO FIXO |\n");
@@ -177,7 +177,7 @@ public class Main {
 
                           break;
   
-                        case 4:
+                        case 4: // ADD CUSTO ADICIONAL
                         
                           // DADOS TECLADO
                           System.out.println("| DIGITE AS INFOS PARA ADICIONAR UM CUSTO ADICIONAL |");
@@ -198,14 +198,20 @@ public class Main {
                           
                           break;
                         
-                        case 5:
+                        case 5: // MOSTRAR MORADORES DO AP
   
                           if(apartamento.getColegas().isEmpty()){
                             System.out.println("\n(error) Não há colegas cadatrados.\n");
+                            System.out.println("\n| tecle enter para voltar ao menu |");
+                            String saircolegavazio = input.nextLine();
+                            input.nextLine();
                             }
 
                           else if(apartamento.getColegas().isEmpty() == false){
                             apartamento.ExibirMoradores();
+                            System.out.println("\n| tecle enter para voltar ao menu |");
+                            String sairtruecolega = input.nextLine();
+                            input.nextLine();
                             }
 
                           System.out.println("\n| tecle enter para voltar ao menu |");
@@ -213,7 +219,7 @@ public class Main {
 
                         break;
   
-                        case 6:
+                        case 6: // MOSTRAR TAREFAS DO AP
   
                           if(apartamento.getTarefas().isEmpty()){
                             System.out.println("\n(error) Não há tarefas cadatradas.\n");
@@ -232,7 +238,7 @@ public class Main {
                             input.nextLine();
                           break;
 
-                        case 7:
+                        case 7: // DISTRIBUIR TAREFAS
 
                             if(apartamento.getColegas().isEmpty()){
                               System.out.println("|NOTAS| CADASTRE COLEGAS PRIMEIRO!");
@@ -249,7 +255,62 @@ public class Main {
                             }
                             break;
 
-                        case 12:
+                        case 8: // DELETAR COLEGA
+
+                          if(apartamento.getColegas().isEmpty()){
+                            System.out.println("|NOTA| NÃO EXISTE COLEGAS CADASTRADOS!");
+                            System.out.println("| tecle enter para voltar ao menu |");
+                            String sairdeletarcolega = input.nextLine();
+                            input.nextLine();
+                          }
+                          else{
+                          apartamento.ExibirMoradores();
+                          System.out.println("\nQual colega você deseja excluir ?");
+                          System.out.println("Digite o índice do colega ?"); 
+                          int colegaExpulo = input.nextInt();
+                          apartamento.deleteColegas(colegaExpulo - 1);
+
+                          System.out.println("\n[COLEGA EXCLUIDO COM SUCESSO!]\n");
+                          System.out.println("| tecle enter para voltar ao menu |");
+                          String sairsucessodelet = input.nextLine();
+                          input.nextLine();
+                          }
+                          break;
+
+                        case 9: // DELETAR TAREFAS
+                          if(apartamento.getTarefas().isEmpty()){
+                            System.out.println("|NOTA| NÃO EXISTE TAREFAS PARA DELETAR!");
+                            System.out.println("| tecle enter para voltar ao menu |");
+                            String sairerrodelet = input.nextLine();
+                            input.nextLine();
+                          }
+                          else{
+                          apartamento.ExibirTarefas();
+
+                          System.out.println("\nQual tarefa você deseja excluir ?");
+                          System.out.println("Digite o índice da tarefa");
+
+                          int tarefaExluida = input.nextInt();
+
+                          apartamento.deleteTarefa(tarefaExluida);
+
+                          System.out.println("\n[TAREFA EXCLUIDA COM SUCESSO!]\n");
+                          System.out.println("| tecle enter para voltar ao menu |");
+                          String sairexibirtarefas = input.nextLine();
+                          input.nextLine();
+                          }
+                          break;
+                        case 10: // ZERAR CUSTOS
+
+                          System.out.println("Custos sendo todos apagados");
+                          apartamento.setCustos(0);
+                          System.out.println("| tecle enter para voltar ao menu |");
+                          String sairexc = input.nextLine();
+                          input.nextLine();
+
+                          break;
+
+                        case 11: // SAIR SEGUNDO WHILE 
                           segundoWhile = false;
                           break;
                                                   
