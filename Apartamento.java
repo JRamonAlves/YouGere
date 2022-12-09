@@ -241,11 +241,23 @@ public class Apartamento {
         }
 
         else{
-            for(Tarefa e: Tarefas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
-                System.out.println(i + "º " + e.getNome_tarefa() + " - " + e.getColega().getNome());
-                i+=1;
-            }  
-            System.out.println();
+
+            try {
+
+                
+                for(Tarefa e: Tarefas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
+                    System.out.println(i + "º " + e.getNome_tarefa() + " - " + e.getColega().getNome());
+                    i+=1;
+                }  
+                
+            } catch (Exception e) {
+
+                for(Tarefa Tarefa: Tarefas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
+                    System.out.println(i + "º " + Tarefa.getNome_tarefa());
+                    i+=1;
+                }
+
+            }
         }
     }
 

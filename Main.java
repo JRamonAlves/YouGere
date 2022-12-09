@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.sound.sampled.SourceDataLine;
+
 
 public class Main {
     public static void main(String [] arsgs) {
@@ -8,9 +10,11 @@ public class Main {
 
       try (Scanner input = new Scanner(System.in)) {
 
+        
+        System.out.println("\n\tBem-vindo ao YouGere");
+
         // PRIMEIRO WHILE INFINITO EXIBINDO MENU PRINCIPAL
         while (true){
-        System.out.println("\tBem-vindo ao YouGere");
         System.out.println("\n| O que deseja fazer? Digite o número correspondente:\n");
         System.out.println("[1] Criar um novo apartamento");
         System.out.println("[2] Gerenciar apartamentos\n[3] Sair");
@@ -43,7 +47,7 @@ public class Main {
             // MENSAGEM DE CONFIRMAÇÃO E RETORNO AO MENU PRINCIPAL. 
             System.out.println(" \nApartamento criado com sucesso! Tecle ENTER PARA VOLTAR AO MENU");
             String retorno = input.nextLine();
-            System.out.println("\n\n\n\n");
+            System.out.println("\n");
         }
 
           // CONDIÇÃO CASO O USUÁRIO DIGITA A OPÇÃO [2]
@@ -60,168 +64,187 @@ public class Main {
             
             System.out.println("\nOPÇÃO ESCOLHIDA: (2)\n-------------------- \n[1] VER APARTAMENTOS\n[2] SAIR.  ");
             int varEscolha2 = input.nextInt(); // var escolha em inteiro.
-            
-            // VERIFICA SE O ARRAY DE APARTAMENTOS ESTÁ VAZIO
-            if(predio.estaVazio()){
-              // CASO ESTEJA VAZIO EXIBE MENSAGEM.
-              System.out.println("\n(ERRO) VOCÊ PRECISA CADASTRAR AO MENOS UM APARTAMENTO!");
-              System.out.print("TECLE ENTER PARA SAIR: ");
-
-              // QUEBRA O PRIMEIRO WHILE E RETORNA AO MENU PRINCIPAL.
-              String saindoWhile1 = input.nextLine();
-              PrimeiroWhile = false;
-            }
 
             // CASO O ARRAY DE APARTAMENTOS NÃO RETORNE TRUE, ENTRAMOS NO SEGUNDO ELSE IF
-            else if (varEscolha2 == 1){
-                  
-              predio.exibirAps();
+            if (varEscolha2 == 1){
 
-              System.out.println("\nDigite o número  do ap que deseja gerenciar: ");
-              int gerenciarAp = input.nextInt();
-
-              ArrayList <Apartamento> listaAps = predio.getPredio();
-              
-              for (Apartamento apartamento : listaAps) {
-
-                if(gerenciarAp == apartamento.getNumeroAp()){
-                  
-                  boolean segundoWhile = true;
-                  System.out.println("OPÇÕES DE GERENCIAMENTO: ");
-                  
-                  while(segundoWhile == true){
-                    
-                    System.out.println("\n\n| AP NÚMERO: "+apartamento.getNumeroAp()+" | Nome AP: "+apartamento.getNome()+" | CUSTO TOTAL: "+apartamento.getDespesaTotal()+" |");
-                    
-                    System.out.println("OPÇÕES DE GERENCIAMENTO: ");
-                    System.out.println("[1] ADD COLEGA");
-                    System.out.println("[2] ADD TAREFAS");
-                    System.out.println("[3] ADD CUSTO FIXO");
-                    System.out.println("[4] ADD CUSTO ADICIONAL");
-                    System.out.println("[5] MOSTRAR MORADORES DO AP");
-                    System.out.println("[6] MOSTRAR TAREFAS DO AP");
-                    System.out.println("[] Sair");
-                    int aplocal = input.nextInt();
-                    
-                    
-                    // if(aplocal == 5 && apartamento.getColegas().isEmpty()){
-                    //   System.out.println("\n(error) Não há colegas cadatrados.\n");
-                    // }
-                    // else if(aplocal == 5 && apartamento.getColegas().isEmpty() == false){
-                    //   apartamento.ExibirMoradores();
-                    // }
-                    
-                    switch (aplocal) {
-                      
-                      case 1:
-
-                        System.out.println("Digite as infos para cadastrar COLEGA:\n");
-                        
-                        // DADOS DO TECLADO
-                        System.out.print("Nome:");
-                        String nomeColega = input.next();
-
-                        System.out.print("Celular: ");
-                        String celularCulega = input.next();
-
-                        ColegasDeQuarto coleguaQuarto = new ColegasDeQuarto(nomeColega, celularCulega);
-                        apartamento.addColegas(coleguaQuarto);
-                        break;
-                        // FIM CASE 1
-
-                      case 2:
-
-                        // DADOS TECLADO
-                        System.out.println("Digite as infos para cadastrar uma TAREFA:\n");
-                        
-                        System.out.print("Nome da tarefa:");
-                        String nomeTask = input.nextLine();
-                        input.nextLine();
-
-                        System.out.print("Inicio da tarefa: ");
-                        String estimaInicio = input.nextLine();
-                        input.nextLine();
-
-                        System.out.print("Inicio da tarefa: ");
-                        String dataPrazo = input.nextLine();
-                        input.nextLine();
-
-                        // CRIANDO NOVA INSTÂNCIA DE TAREFA E ADICIONANDO ARRAY TAREFA AP
-
-                        Tarefa task = new Tarefa(nomeTask, estimaInicio, dataPrazo);
-                        apartamento.addTask(task);
-                        break;
-
-                      case 3:
-
-                        // DADOS TECLADO
-                        System.out.println("| DIGITE AS INFOS PARA CADASTRAR UM CUSTO FIXO |\n");
-                        
-                        System.out.print("Descrição do custo: ");
-                        String nomeCusto = input.nextLine();
-                        input.nextLine();
-
-                        System.out.print("Valor do custo: ");
-                        int valorCusto = input.nextInt();
+              if(predio.estaVazio()){
+                // CASO ESTEJA VAZIO EXIBE MENSAGEM.
+                System.out.println("\n(ERRO) VOCÊ PRECISA CADASTRAR AO MENOS UM APARTAMENTO!");
+                System.out.println();
+                System.out.println();
+  
+                // QUEBRA O PRIMEIRO WHILE E RETORNA AO MENU PRINCIPAL.
                 
-                        // CRIANDO NOVA INSTÂNCIA DE TAREFA E ADICIONANDO ARRAY TAREFA AP
-                        Custos custoFix = new Custos(nomeCusto, valorCusto);
-                        apartamento.addCustoFixo(custoFix);
+                PrimeiroWhile = false;
+              
+              }else{
 
-                        System.out.println("\n[CUSTO FIXO CADASTRADO COM SUCESSO!]\nTecle enter para voltar ao menu");
+                predio.exibirAps();
 
-                        String sairfx = input.nextLine();
-                      break;
+                System.out.println("\nDigite o número  do ap que deseja gerenciar: ");
+                int gerenciarAp = input.nextInt();
 
-                      case 4:
-                        // DADOS TECLADO
-                        System.out.println("| DIGITE AS INFOS PARA ADICIONAR UM CUSTO ADICIONAL |");
+                ArrayList <Apartamento> listaAps = predio.getPredio();
+
+                for (Apartamento apartamento : listaAps) {
+
+                  if(gerenciarAp == apartamento.getNumeroAp()){
                     
-                        System.out.print("Descrição do custo: ");
-                        String nomeCustoAd = input.nextLine();
+                    boolean segundoWhile = true;
 
-                        System.out.print("Valor do custo: ");
-                        int ValorCustoAd = input.nextInt();
-                  
-                        // CRIANDO NOVA INSTÂNCIA DE TAREFA E ADICIONANDO ARRAY TAREFA AP
-                        Custos custoAdic = new Custos(nomeCustoAd, ValorCustoAd);
-                        apartamento.addCustoAdicional(custoAdic);
+                    while(segundoWhile == true){
+                      
+                      System.out.println("\n\n| AP NÚMERO: "+apartamento.getNumeroAp()+" | Nome AP: "+apartamento.getNome()+" | CUSTO TOTAL: "+apartamento.getDespesaTotal()+" |");
+                      
+                      System.out.println("OPÇÕES DE GERENCIAMENTO: ");
+                      System.out.println();
+                      System.out.println("[1] ADD COLEGA");
+                      System.out.println("[2] ADD TAREFAS");
+                      System.out.println("[3] ADD CUSTO FIXO");
+                      System.out.println("[4] ADD CUSTO ADICIONAL");
+                      System.out.println("[5] MOSTRAR MORADORES DO AP");
+                      System.out.println("[6] MOSTRAR TAREFAS DO AP");
+                      System.out.println("[] Sair");
+                      int aplocal = input.nextInt();
+                      
+                      
+                      // if(aplocal == 5 && apartamento.getColegas().isEmpty()){
+                      //   System.out.println("\n(error) Não há colegas cadatrados.\n");
+                      // }
+                      // else if(aplocal == 5 && apartamento.getColegas().isEmpty() == false){
+                      //   apartamento.ExibirMoradores();
+                      // }
+                      
+                      switch (aplocal) {
                         
-                        System.out.println("\n[CUSTO ADICIONAL CADASTRADO COM SUCESSO!]\n   tecle enter para voltar ao menu");
-                        input.nextLine();
-                        String sair = input.nextLine();
+                        case 1:
+  
+                          System.out.println("Digite as infos para cadastrar COLEGA:\n");
+                          
+                          // DADOS DO TECLADO
+                          System.out.print("Nome:");
+                          String nomeColega = input.next();
+  
+                          System.out.print("Celular: ");
+                          String celularCulega = input.next();
+  
+                          ColegasDeQuarto coleguaQuarto = new ColegasDeQuarto(nomeColega, celularCulega);
+                          apartamento.addColegas(coleguaQuarto);
+                          break;
+                          // FIM CASE 1
+  
+                        case 2:
+  
+                          // DADOS TECLADO
+                          System.out.println("Digite as infos para cadastrar uma TAREFA:\n");
+                          
+                          System.out.print("Nome da tarefa:");
+                          String nomeTask = input.nextLine();
+                          input.nextLine();
+  
+                          System.out.print("Inicio da tarefa: ");
+                          String estimaInicio = input.nextLine();
+                          input.nextLine();
+  
+                          System.out.print("Final da tarefa: ");
+                          String dataPrazo = input.nextLine();
+                          input.nextLine();
+  
+                          // CRIANDO NOVA INSTÂNCIA DE TAREFA E ADICIONANDO ARRAY TAREFA AP
+  
+                          System.out.println("Tarefa criada com sucesso");
+                          
+                          Tarefa task = new Tarefa(nomeTask, estimaInicio, dataPrazo);
+                          apartamento.addTask(task);
+
+                          break;
+  
+                        case 3:
+  
+                          // DADOS TECLADO
+                          System.out.println("| DIGITE AS INFOS PARA CADASTRAR UM CUSTO FIXO |\n");
+                          
+                          System.out.print("Descrição do custo: ");
+                          String nomeCusto = input.nextLine();
+                          input.nextLine();
+  
+                          System.out.print("Valor do custo: ");
+                          int valorCusto = input.nextInt();
+                          input.nextLine();
                   
-                      break;
+                          // CRIANDO NOVA INSTÂNCIA DE TAREFA E ADICIONANDO ARRAY TAREFA AP
+                          Custos custoFix = new Custos(nomeCusto, valorCusto);
+                          apartamento.addCustoFixo(custoFix);
+  
+                          System.out.println("\n[CUSTO FIXO CADASTRADO COM SUCESSO!]\n");
+  
+                          input.nextLine();
+
+                        break;
+  
+                        case 4:
+                          // DADOS TECLADO
+                          System.out.println("| DIGITE AS INFOS PARA ADICIONAR UM CUSTO ADICIONAL |");
                       
-                      case 5:
+                          System.out.println("Descrição do custo: ");
+                          String nomeCustoAd = input.nextLine();
+  
+                          System.out.println("Valor do custo: ");
+                          int ValorCustoAd = input.nextInt();
+                    
+                          // CRIANDO NOVA INSTÂNCIA DE TAREFA E ADICIONANDO ARRAY TAREFA AP
+                          Custos custoAdic = new Custos(nomeCustoAd, ValorCustoAd);
+                          apartamento.addCustoAdicional(custoAdic);
+                          
+                          System.out.println("\n[CUSTO ADICIONAL CADASTRADO COM SUCESSO!]\n");
 
-                        if(apartamento.getColegas().isEmpty()){
-                          System.out.println("\n(error) Não há colegas cadatrados.\n");
-                          }
-                        else if(apartamento.getColegas().isEmpty() == false){
-                          apartamento.ExibirMoradores();
-                          }
-                      
-                      break;
-
-                      case 6:
-
-                      if(apartamento.getColegas().isEmpty()){
-                        System.out.println("\n(error) Não há colegas cadatrados.\n");
-                        }
-                      else if(apartamento.getColegas().isEmpty() == false){
-                        apartamento.ExibirMoradores();
-                        }
-
-                      break;
-                                                
-                      } // Swich Case 
-                    } // Segundo Whille
+                          input.nextLine();
+                    
+                        break;
+                        
+                        case 5:
+  
+                          if(apartamento.getColegas().isEmpty()){
+                            System.out.println("\n(error) Não há colegas cadatrados.\n");
+                            }
+                          else if(apartamento.getColegas().isEmpty() == false){
+                            apartamento.ExibirMoradores();
+                            }
+                          
+                          String sairmorador = input.nextLine();
+                        break;
+  
+                        case 6:
+  
+                          if(apartamento.getTarefas().isEmpty()){
+                            System.out.println("\n(error) Não há tarefas cadatradas.\n");
+                            }
+                          else if(apartamento.getTarefas().isEmpty() == false){
+                            apartamento.ExibirTarefas();
+                            }
+                          
+                            String sairTarefas = input.nextLine();
+  
+                        break;
+                                                  
+                        } // Swich Case 
+                      }
+                    }
                   } // If Gerenciar ap - lin 81
                 } // for each
+              
               } //  Else if - lin 73
             } // Primeiro While 
-        } // ver Apartamentos - lin 50
+          } // ver Apartamentos - lin 50
+        else if(varEscolha1 == 3){  
+
+          System.out.println("\n\tMuito obrigado por utilizar o YouGere");
+          System.out.println();
+
+          System.exit(0);
+
+        }
       } // While Infinito 
     } // Try Scanner
   } // Public Static
