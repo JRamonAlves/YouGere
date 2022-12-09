@@ -82,6 +82,8 @@ public class Main {
                       boolean segundoWhile = true;
                       System.out.println("OPÇÕES DE GERENCIAMENTO: ");
                       while(segundoWhile = true){
+                      System.out.println("\n\n| AP NÚMERO: "+apartamento.getNumeroAp()+" | Nome AP: "+apartamento.getNome()+" | CUSTO TOTAL: "+apartamento.getDespesaTotal()+" |");
+                      System.out.println("OPÇÕES DE GERENCIAMENTO: ");
                       System.out.println("[1] ADD COLEGA");
                       System.out.println("[2] ADD TAREFAS");
                       System.out.println("[3] ADD CUSTO FIXO");
@@ -137,12 +139,13 @@ public class Main {
                             // CRIANDO NOVA INSTÂNCIA DE TAREFA E ADICIONANDO ARRAY TAREFA AP
                             Tarefa task = new Tarefa(nomeTask, estimaInicio, dataPrazo);
                             apartamento.addTask(task);
+                            break;
 
                         case 3:
                                // DADOS TECLADO
-                            System.out.println("Digite as infos para cadastrar um CUSTO FIXO:\n");
+                            System.out.println("| DIGITE AS INFOS PARA CADASTRAR UM CUSTO FIXO |\n");
                             
-                            System.out.print("Descrição do custo:");
+                            System.out.print("Descrição do custo: ");
                             String nomeCusto = input.nextLine();
                             input.nextLine();
 
@@ -151,13 +154,16 @@ public class Main {
                     
                             // CRIANDO NOVA INSTÂNCIA DE TAREFA E ADICIONANDO ARRAY TAREFA AP
                             Custos custoFix = new Custos(nomeCusto, valorCusto);
-                            apartamento.addCustoFixo(custoFix);
+                            System.out.println("\n[CUSTO FIXO CADASTRADO COM SUCESSO!]\n   tecle enter para voltar ao menu");
+                            input.nextLine();
+                            String sairfx = input.nextLine();
+                            break;
 
                         case 4:
                             // DADOS TECLADO
-                            System.out.println("Digite as infos para cadastrar um CUSTO ADICIONAL:\n");
+                            System.out.println("| DIGITE AS INFOS PARA ADICIONAR UM CUSTO ADICIONAL |\n");
                         
-                            System.out.print("Descrição do custo:");
+                            System.out.print("Descrição do custo: ");
                             String nomeCustoAd = input.nextLine();
                             input.nextLine();
   
@@ -167,6 +173,11 @@ public class Main {
                             // CRIANDO NOVA INSTÂNCIA DE TAREFA E ADICIONANDO ARRAY TAREFA AP
                             Custos custoAdic = new Custos(nomeCustoAd, ValorCustoAd);
                             apartamento.addCustoAdicional(custoAdic);
+                            System.out.println("\n[CUSTO ADICIONAL CADASTRADO COM SUCESSO!]\n   tecle enter para voltar ao menu");
+                            input.nextLine();
+                            String sairad = input.nextLine();
+                      
+                            break;
                         case 5:
                             segundoWhile = false;
                             break;
