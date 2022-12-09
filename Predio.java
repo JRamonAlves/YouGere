@@ -20,7 +20,6 @@ public class Predio {
     }
     //public void atualizarApartamento(Apartamento ap){
 
-    
     public boolean estaVazio(){
         return predio.isEmpty();
     }

@@ -154,15 +154,16 @@ public class Apartamento {
 
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
 
-        System.out.println("-----------------------\n\tCOLEGAS");
-        System.out.println("-----------------------");
+        System.out.println(" --- MORADORES DO APARTAMENTO ---");
+  
+        for(ColegasDeQuarto morador: Colegas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um. 
 
-        for(ColegasDeQuarto e: Colegas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um. 
-
-            System.out.println("\t" +i+"º "+ e.getNome()); // Mostra nome de cada colega de quarto cadastrado.
+            System.out.println("["+i+"]\n| NOME DO COLEGA: "+ morador.getNome()+"\n| CONTATO: "+morador.getCelular()+"\n| CUSTOS: "+morador.getCustoAluno()+"\n"); // Mostra nome de cada colega de quarto cadastrado.
+            morador.ExibirTarefas();
+            System.out.println("\n*");
             i += 1;
         }
-        System.out.println();
+        System.out.println("\n\n");
 
     }
     public void ExibirCustos() {
@@ -201,7 +202,9 @@ public class Apartamento {
                 }
             }
         }
-    
+    public boolean estaVazioColegas(){
+         return Colegas.isEmpty();
+    }
     public void DivideCustos() {
         
         int qntdColegas = Colegas.size();

@@ -3,12 +3,12 @@ import java.util.ArrayList;
 public class ColegasDeQuarto {
     
     private String nome;
-    private int celular;
+    private String celular;
     private Apartamento moradia;
     private double custoAluno;
     private ArrayList <Tarefa> tarefas = new ArrayList<>();
 
-    public ColegasDeQuarto(String nomeColega, int celularDoColega) {
+    public ColegasDeQuarto(String nomeColega, String celularDoColega) {
         this.nome = nomeColega;
         this.celular = celularDoColega;
     }
@@ -18,7 +18,7 @@ public class ColegasDeQuarto {
     public String getNome() {
         return nome;
     }
-    public int getCelular() {
+    public String getCelular() {
         return celular;
     }
     public Apartamento getMoradia() {
@@ -31,7 +31,7 @@ public class ColegasDeQuarto {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public void setCelular(int celular) {
+    public void setCelular(String celular) {
         this.celular = celular;
     }
     public void setMoradia(Apartamento moradia) {
@@ -72,16 +72,14 @@ public class ColegasDeQuarto {
     public void ExibirTarefas() {
 
         int i = 1; // Var aux para enumerar cada OBJ que será exibido
-        
-        System.out.println("-------------------------------");
-        System.out.println("          TAREFAS");
-        System.out.println("-------------------------------");
-
+        System.out.println("  TAREFAS ATRIBUIDAS **  **  **");
+        if(tarefas.isEmpty()){
+            System.out.println("| Nota: Nenhuma tarefa atribuida.");
+        }
         // EXIBE CADA OBJ DA CLASSE TAREFAS COM UM FOR EACH
-
         for(Tarefa e: tarefas){ // Foreach - para cada obj dentro de tarefas me mostre cada um.
             
-            System.out.println(i + "º " + e.getNome_tarefa());
+            System.out.println("\n"+i + "\n| " + e.getNome_tarefa()+"| "+e.getInicio_task()+"| "+e.getPrazo_task());
             i+=1;
         }  
     }
