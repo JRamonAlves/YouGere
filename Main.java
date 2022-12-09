@@ -65,8 +65,11 @@ public class Main {
             System.out.println("\nOPÇÃO ESCOLHIDA: (2)\n-------------------- \n[1] VER APARTAMENTOS\n[2] SAIR.  ");
             int varEscolha2 = input.nextInt(); // var escolha em inteiro.
 
+            if(varEscolha2 == 2){
+              PrimeiroWhile = false;
+            }
             // CASO O ARRAY DE APARTAMENTOS NÃO RETORNE TRUE, ENTRAMOS NO SEGUNDO ELSE IF
-            if (varEscolha2 == 1){
+            else{
 
               if(predio.estaVazio()){
                 // CASO ESTEJA VAZIO EXIBE MENSAGEM.
@@ -87,16 +90,12 @@ public class Main {
 
                 ArrayList <Apartamento> listaAps = predio.getPredio();
 
-                for (Apartamento apartamento : listaAps) {
+                  for (Apartamento apartamento : listaAps) {
 
                   if(gerenciarAp == apartamento.getNumeroAp()){
-                    
                     boolean segundoWhile = true;
-
                     while(segundoWhile == true){
-                      
                       System.out.println("\n\n| AP NÚMERO: "+apartamento.getNumeroAp()+" | Nome AP: "+apartamento.getNome()+" | CUSTO TOTAL: "+apartamento.getDespesaTotal()+" |");
-                      
                       System.out.println("OPÇÕES DE GERENCIAMENTO: ");
                       System.out.println();
                       System.out.println("[1] ADD COLEGA");
@@ -108,17 +107,8 @@ public class Main {
                       System.out.println("[7] DISTRIBUIR TAREFAS");
                       System.out.println("[8] Sair");
                       int aplocal = input.nextInt();
-                      
-                      
-                      // if(aplocal == 5 && apartamento.getColegas().isEmpty()){
-                      //   System.out.println("\n(error) Não há colegas cadatrados.\n");
-                      // }
-                      // else if(aplocal == 5 && apartamento.getColegas().isEmpty() == false){
-                      //   apartamento.ExibirMoradores();
-                      // }
-                      
+ 
                       switch (aplocal) {
-                        
                         case 1:
   
                           System.out.println("Digite as infos para cadastrar COLEGA:\n");
@@ -224,23 +214,38 @@ public class Main {
   
                           if(apartamento.getTarefas().isEmpty()){
                             System.out.println("\n(error) Não há tarefas cadatradas.\n");
+                            System.out.println("| tecle enter para voltar ao menu |");
+                            input.nextLine();
+
                             }
                           else if(apartamento.getTarefas().isEmpty() == false){
                             apartamento.ExibirTarefas();
                             }
                           
                             String sairTarefas = input.nextLine();
-                             System.out.println("\n[CUSTO ADICIONAL CADASTRADO COM SUCESSO!]\n");
-                          System.out.println("| tecle enter para voltar ao menu |");
-                          input.nextLine();
-  
+
+                            System.out.println("\n[CUSTO ADICIONAL CADASTRADO COM SUCESSO!]\n");
+                            System.out.println("| tecle enter para voltar ao menu |");
+                            input.nextLine();
                           break;
 
                         case 7:
+
+                            if(apartamento.getColegas().isEmpty()){
+                              System.out.println("|NOTAS| CADASTRE COLEGAS PRIMEIRO!");
+                              System.out.println("| tecle enter para voltar ao menu |");
+                              String varSair = input.nextLine();
+                              input.nextLine();
+                            }
+                            else{
                             apartamento.distribuiTarefas();
                             System.out.println("\n[TAREFAS DISTRIBUIDAS COM SUCESSO!]\n");
                             System.out.println("| tecle enter para voltar ao menu |");
+                            String sairDistribuir = input.nextLine();
                             input.nextLine();
+                            }
+                            break;
+
                         case 8:
                           segundoWhile = false;
                           break;
