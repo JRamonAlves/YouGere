@@ -22,36 +22,43 @@ public class Main {
         System.out.println("\tBem-vindo ao YouGere");
         System.out.println("\n| O que deseja fazer? Digite o número correspondente:\n");
         System.out.println("[1] Criar um novo apartamento");
-        System.out.println("[2] Acessar algum apartamento existente\n[3] Sair");
+        System.out.println("[2] Acessar apartamentos existentes\n[3] Sair");
         System.out.println("-------------------------------------------------------");
         
         
         int escolha = input.nextInt();
   
         if(escolha == 1){
-          System.out.println("A opção escolhida: 1. [...criando apartamento]");
+          System.out.println("\n\nA opção escolhida: [1]\n(Criando apartamento...)\n---------------------------\n");
           // preenchendo informações para instância de criação do AP
-          System.out.print("Digite o numero do apartamento: ");
+          System.out.println("*******  CRIANDO APARTAMENTO  *******");
+          System.out.print("| Digite o numero do apartamento: ");
           int numAp = input.nextInt();
           input.nextLine();
-          // OBS: NEXT LINE NÃO DÁ ERRO AO DIGITAR INTEIRO
-          System.out.print("Digite o nome do apartamento: ");
+          System.out.print("| Digite o nome do apartamento: ");
           String nomeAp = input.nextLine();
-          System.out.print("Digite o endereço do apartamento: ");
+          System.out.print("| Digite o endereço do apartamento: ");
           String enderecoAp = input.nextLine();
           Apartamento ap1 = new Apartamento(nomeAp, enderecoAp, numAp);
           pr1.addApartamento(ap1);
-          System.out.println("Apartamento criado com sucesso!\n\n");
+          System.out.println(" \nApartamento criado com sucesso! Tecle ENTER PARA VOLTAR AO MENU");
+          String retorno = input.nextLine();
+          System.out.println("\n\n\n\n");
         }
 
 
         else if(escolha == 2){
         boolean x = true; 
         while(x == true){
-          System.out.println("[1] Ver apartamentos \n| [2] Sair.  ");
+          System.out.println("\nOPÇÃO ESCOLHIDA: (2)\n-------------------- \n[1] Ver apartamentos\n[2] Sair.  ");
           int escolhaAp = input.nextInt();
-          
-          if (escolhaAp == 1){
+          if(pr1.verifica()){
+            System.out.println("\n(ERRO) VOCÊ PRECISA CADASTRAR AO MENOS UM APARTAMENTO!");
+            System.out.print("TECLE ENTER PARA SAIR: ");
+            String saindoWhile1 = input.nextLine();
+            x = false;
+          }
+          else if (escolhaAp == 1){
                 pr1.exibirAps();
                 System.out.println("\nDigite o número  do ap que deseja gerenciar: ");
                 int gerenciarAp = input.nextInt();
@@ -61,7 +68,7 @@ public class Main {
                 for (Apartamento e : listaAps) {
                     if(gerenciarAp == e.getNumeroAp()){
                       boolean j = true;
-                      while(j == true){
+                      while(j = true){
                       System.out.println("[1] ADD COLEGA");
                       System.out.println("[2]");
                       System.out.println("[3]");

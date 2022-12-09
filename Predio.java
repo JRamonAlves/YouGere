@@ -7,11 +7,9 @@ public class Predio {
     public ArrayList<Apartamento> getPredio() {
         return predio;
     }
-
     public void addApartamento(Apartamento var) {
         predio.add(var);
     }
- 
     public void exibirAps(){
         int i = 1;
         for (Apartamento apartamento : predio) {
@@ -19,8 +17,10 @@ public class Predio {
             i++;
         }
     }
-
     public void atualizarApartamento(Apartamento ap){
 
+    }
+    public boolean verifica(){
+        return predio.isEmpty();
     }
 }
