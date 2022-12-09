@@ -71,13 +71,13 @@ public class Apartamento {
     }
     
     // Métodos para gerenciamento dos Arrays
-    
     // Colegas do Apartamento
 
     public void addColegas(ColegasDeQuarto colega) {
-        Colegas.add(colega);    // Setando um colega do tipo "ColegasDeQuarto". Como se trata de um arrey o SET nesse caso funcionará usando 
-    }                           // funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()"
+        Colegas.add(colega);    
+    }                           
     
+
     public void deleteColegas(ColegasDeQuarto colegas) {
         Colegas.remove(colegas);
     }

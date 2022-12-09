@@ -8,12 +8,9 @@ public class ColegasDeQuarto {
     private double custoAluno;
     private ArrayList <Tarefa> tarefas = new ArrayList<>();
 
-    public ColegasDeQuarto(String nomeColega, int celularDoColega, Apartamento Apartamento) {
+    public ColegasDeQuarto(String nomeColega, int celularDoColega) {
         this.nome = nomeColega;
         this.celular = celularDoColega;
-        this.moradia = Apartamento;
-        Apartamento.addColegas(this);
-    
     }
 
     // SETS E GETS DOS ATRIBUTOS NORMAIS
