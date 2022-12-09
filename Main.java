@@ -81,7 +81,7 @@ public class Main {
                     if(gerenciarAp == apartamento.getNumeroAp()){
                       boolean segundoWhile = true;
                       System.out.println("OPÇÕES DE GERENCIAMENTO: ");
-                      while(segundoWhile = true){
+                      while(segundoWhile == true){
                       System.out.println("\n\n| AP NÚMERO: "+apartamento.getNumeroAp()+" | Nome AP: "+apartamento.getNome()+" | CUSTO TOTAL: "+apartamento.getDespesaTotal()+" |");
                       System.out.println("OPÇÕES DE GERENCIAMENTO: ");
                       System.out.println("[1] ADD COLEGA");
@@ -93,12 +93,12 @@ public class Main {
                       int aplocal = input.nextInt();
                       
                       
-                      if(aplocal == 5 && apartamento.getColegas().isEmpty()){
-                        System.out.println("\n(error) Não há colegas cadatrados.\n");
-                      }
-                      else if(aplocal == 5 && apartamento.getColegas().isEmpty() == false){
-                        apartamento.ExibirMoradores();
-                      }
+                      // if(aplocal == 5 && apartamento.getColegas().isEmpty()){
+                      //   System.out.println("\n(error) Não há colegas cadatrados.\n");
+                      // }
+                      // else if(aplocal == 5 && apartamento.getColegas().isEmpty() == false){
+                      //   apartamento.ExibirMoradores();
+                      // }
                       
                       switch (aplocal) {
                         case 1:
@@ -178,9 +178,22 @@ public class Main {
                             String sairad = input.nextLine();
                       
                             break;
+
+                        case 5:
+
+                            if(aplocal == 5 && apartamento.getColegas().isEmpty()){
+                              System.out.println("\n(error) Não há colegas cadatrados.\n");
+                              }
+                            else if(aplocal == 5 && apartamento.getColegas().isEmpty() == false){
+                              apartamento.ExibirMoradores();
+                              }
+                            break;
+
                         case 6:
                             segundoWhile = false;
                             break;
+
+
 
                         
                         
