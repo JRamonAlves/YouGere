@@ -72,14 +72,14 @@ public class ColegasDeQuarto {
     public void ExibirTarefas() {
 
         int i = 1; // Var aux para enumerar cada OBJ que será exibido
-        System.out.println("  TAREFAS ATRIBUIDAS **  **  **");
+        System.out.println("TAREFAS ATRIBUIDAS **  **  **");
         if(tarefas.isEmpty()){
             System.out.println("| Nota: Nenhuma tarefa atribuida.");
         }
         // EXIBE CADA OBJ DA CLASSE TAREFAS COM UM FOR EACH
         for(Tarefa e: tarefas){ // Foreach - para cada obj dentro de tarefas me mostre cada um.
             
-            System.out.println("\n"+i + "\n| " + e.getNome_tarefa()+"| "+e.getInicio_task()+"| "+e.getPrazo_task());
+            System.out.println("\n| DESCRILÇÃO TASK: "+e.getNome_tarefa()+"\n| DATA INICIO: "+e.getInicio_task()+"\n| DATA PRAZO: "+e.getPrazo_task());
             i+=1;
         }  
     }

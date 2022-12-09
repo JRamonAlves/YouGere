@@ -1,9 +1,11 @@
-
+import java.util.Scanner;
 public class testesS {
     public static void main(String [] arsgs) {
   
-    System.out.println("  TAREFAS ATRIBUIDAS **  **  **");
-    System.out.println("| Nota: Nenhuma tarefa atribuida.");
+      try (Scanner input = new Scanner(System.in)) {
+      String exemplo = input.nextLine();
+      System.out.println(exemplo);
+      }
   
   }
 }

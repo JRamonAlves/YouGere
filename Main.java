@@ -88,9 +88,9 @@ public class Main {
                       System.out.println("[2] ADD TAREFAS");
                       System.out.println("[3] ADD CUSTO FIXO");
                       System.out.println("[4] ADD CUSTO ADICIONAL");
-                      System.out.println("\n[5] MOSTRAR MORADORES DO AP");
+                      System.out.println("[5] MOSTRAR MORADORES DO AP");
                       System.out.println("[6] MOSTRAR TAREFAS DO AP");
-                      System.out.println("[] Sair");
+                      System.out.println("[7] Sair");
                       int aplocal = input.nextInt();
                       
                       
@@ -107,16 +107,17 @@ public class Main {
                             System.out.println("Digite as infos para cadastrar COLEGA:\n");
                             
                             // DADOS DO TECLADO
-                            System.out.print("Nome:");
+                            System.out.print("Nome: ");
                             String nomeColega = input.next();
                             String lixo = input.nextLine();
 
                             System.out.print("Celular: ");
                             String celularCulega = input.nextLine();
 
-
                             ColegasDeQuarto coleguaQuarto = new ColegasDeQuarto(nomeColega, celularCulega);
                             apartamento.addColegas(coleguaQuarto);
+                            System.out.println("\n[COLEGA CADASTRADO COM SUCESSO!]\n tecle enter para voltar ao menu");
+                            String saircol = input.nextLine();
                             break;
                             // FIM CASE 1
 
@@ -125,21 +126,26 @@ public class Main {
                           // DADOS TECLADO
                             System.out.println("Digite as infos para cadastrar uma TAREFA:\n");
                             
-                            System.out.print("Nome da tarefa:");
-                            String nomeTask = input.nextLine();
-                            input.nextLine();
+                            System.out.print("Nome da tarefa: ");
+                            String nomeTask = input.next();
+                            String lixo2 = input.nextLine();
+                            
+                            
 
                             System.out.print("Inicio da tarefa: ");
                             String estimaInicio = input.nextLine();
-                            input.nextLine();
+                            
 
-                            System.out.print("Inicio da tarefa: ");
+                            System.out.print("Final da tarefa: ");
                             String dataPrazo = input.nextLine();
-                            input.nextLine();
+                            
 
                             // CRIANDO NOVA INSTÂNCIA DE TAREFA E ADICIONANDO ARRAY TAREFA AP
                             Tarefa task = new Tarefa(nomeTask, estimaInicio, dataPrazo);
                             apartamento.addTask(task);
+                            System.out.println("\n[TAREFA CADASTRADA COM SUCESSO!]\n   tecle enter para voltar ao menu");
+
+                            String sairtsk = input.nextLine();
                             break;
 
                         case 3:
@@ -155,8 +161,7 @@ public class Main {
                     
                             // CRIANDO NOVA INSTÂNCIA DE TAREFA E ADICIONANDO ARRAY TAREFA AP
                             Custos custoFix = new Custos(nomeCusto, valorCusto);
-                            System.out.println("\n[CUSTO FIXO CADASTRADO COM SUCESSO!]\n   tecle enter para voltar ao menu");
-                            input.nextLine();
+                            System.out.println("\n[CUSTO FIXO CADASTRADO COM SUCESSO!]\n tecle enter para voltar ao menu");
                             String sairfx = input.nextLine();
                             break;
 
@@ -191,8 +196,17 @@ public class Main {
                             break;
 
                         case 6:
-                            segundoWhile = false;
+                            apartamento.ExibirTarefas();
+                            System.out.println("Tecle enter para retornar ao menu.");
+                            input.nextLine();
+                            String sairShowTask = input.nextLine();
                             break;
+
+                        case 7:
+                          segundoWhile = false;
+                              break;
+
+                  
 
 
 

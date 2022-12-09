@@ -76,8 +76,6 @@ public class Apartamento {
     public void addColegas(ColegasDeQuarto colega) {
         Colegas.add(colega);    
     }                           
-    
-
     public void deleteColegas(ColegasDeQuarto colegas) {
         Colegas.remove(colegas);
     }
@@ -150,7 +148,6 @@ public class Apartamento {
         }
     
     }
-
     public void deleteTarefa(Tarefa tarefa) {
         Tarefas.remove(tarefa);
     }
@@ -170,7 +167,7 @@ public class Apartamento {
 
             System.out.println("["+i+"]\n| NOME DO COLEGA: "+ morador.getNome()+"\n| CONTATO: "+morador.getCelular()+"\n| CUSTOS: "+morador.getCustoAluno()+"\n"); // Mostra nome de cada colega de quarto cadastrado.
             morador.ExibirTarefas();
-            System.out.println("\n*");
+            System.out.println("\n");
             i += 1;
         }
         System.out.println("\n\n");
