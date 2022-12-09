@@ -1,78 +1,90 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import javax.swing.JOptionPane;
+
 
 public class Main {
     public static void main(String [] arsgs) {
-      Predio pr1 = new Predio();
+      Predio predio = new Predio();
 
       try (Scanner input = new Scanner(System.in)) {
 
-        // NÃO MEXER ****
-        // String nome;
-        // StringBuilder mensagem = new StringBuilder();
-        // nome = JOptionPane.showInputDialog("Digite seu nome:");
-        // mensagem.append("Bem-vindo ").append(nome).append("!");
-        // JOptionPane.showMessageDialog(null, mensagem);
-        
+        // PRIMEIRO WHILE INFINITO EXIBINDO MENU PRINCIPAL
         while (true){
-        // NÃO MEXER ****
-        // nome = JOptionPane.showInputDialog("Bem-vindo ao YouGere\n| O que deseja fazer? Digite o número correspondente:\n[1] Criar um novo apartamento para gerenciar\n[2] Acessar algum apartamento existente");
-
         System.out.println("\tBem-vindo ao YouGere");
         System.out.println("\n| O que deseja fazer? Digite o número correspondente:\n");
         System.out.println("[1] Criar um novo apartamento");
         System.out.println("[2] Acessar apartamentos existentes\n[3] Sair");
         System.out.println("-------------------------------------------------------");
         
-        
-        int escolha = input.nextInt();
-  
-        if(escolha == 1){
+        // VARIÁVEL DE ESCOLHA DO MENU PRINCIPAL
+        int varEscolha1 = input.nextInt();
+          
+        // CONDIÇÃO CASO USUÁRIO DIGITE OPÇÃO [1]
+        if(varEscolha1 == 1){
+
           System.out.println("\n\nA opção escolhida: [1]\n(Criando apartamento...)\n---------------------------\n");
-          // preenchendo informações para instância de criação do AP
           System.out.println("*******  CRIANDO APARTAMENTO  *******");
           System.out.print("| Digite o numero do apartamento: ");
+          
+          // ALIMENTANDO VARIÁVEIS PARA PASSAR PARA INSTÂNCIA DO NOVO APARTAMENTO.
           int numAp = input.nextInt();
           input.nextLine();
+          
           System.out.print("| Digite o nome do apartamento: ");
           String nomeAp = input.nextLine();
+          
           System.out.print("| Digite o endereço do apartamento: ");
           String enderecoAp = input.nextLine();
+          
+          // INSTANCIANDO NOVO APARTAMENTO POR CONSTRUTOR E EM SEGUIDA SETANDO AO OBJ "PR1" (linha7)
           Apartamento ap1 = new Apartamento(nomeAp, enderecoAp, numAp);
-          pr1.addApartamento(ap1);
+          predio.addApartamento(ap1);
+
+          // MENSAGEM DE CONFIRMAÇÃO E RETORNO AO MENU PRINCIPAL. 
           System.out.println(" \nApartamento criado com sucesso! Tecle ENTER PARA VOLTAR AO MENU");
           String retorno = input.nextLine();
           System.out.println("\n\n\n\n");
         }
 
+        // CONDIÇÃO CASO O USUÁRIO DIGITA A OPÇÃO [2]
+        else if(varEscolha1 == 2){
+        
+        // SEGUNDO WHILE PARA EXIBIR UM SEGUNDO MENO PARA SAIR PARA O MENU PRINCIPAL OU CONFIRMAR VER APS
+        // Esse while compara uma variável booleana para que possa ser quebrado e retorne ao menu principal.
+        boolean PrimeiroWhile = true; 
+        while(PrimeiroWhile == true){
 
-        else if(escolha == 2){
-        boolean x = true; 
-        while(x == true){
+          // MENSAGEM QUE EXIBE OPÇÕES DE ESCOLHA | Lucas: Optei em deixar em uma linha só para economizar tamanho de arquivo.
           System.out.println("\nOPÇÃO ESCOLHIDA: (2)\n-------------------- \n[1] Ver apartamentos\n[2] Sair.  ");
-          int escolhaAp = input.nextInt();
-          if(pr1.verifica()){
+          int varEscolha2 = input.nextInt(); // var escolha em inteiro.
+          
+          // VERIFICA SE O ARRAY DE APARTAMENTOS ESTÁ VAZIO
+          if(predio.estaVazio()){
+            // CASO ESTEJA VAZIO EXIBE MENSAGEM.
             System.out.println("\n(ERRO) VOCÊ PRECISA CADASTRAR AO MENOS UM APARTAMENTO!");
             System.out.print("TECLE ENTER PARA SAIR: ");
+
+            // QUEBRA O PRIMEIRO WHILE E RETORNA AO MENU PRINCIPAL.
             String saindoWhile1 = input.nextLine();
-            x = false;
+            PrimeiroWhile = false;
           }
-          else if (escolhaAp == 1){
-                pr1.exibirAps();
+
+          // CASO O ARRAY DE APARTAMENTOS NÃO RETORNE TRUE, ENTRAMOS NO SEGUNDO ELSE IF
+          else if (varEscolha2 == 1){
+                predio.exibirAps();
                 System.out.println("\nDigite o número  do ap que deseja gerenciar: ");
                 int gerenciarAp = input.nextInt();
 
-                ArrayList <Apartamento> listaAps = pr1.getPredio();
+                ArrayList <Apartamento> listaAps = predio.getPredio();
                 
-                for (Apartamento e : listaAps) {
-                    if(gerenciarAp == e.getNumeroAp()){
-                      boolean j = true;
-                      while(j = true){
+                for (Apartamento apartamento : listaAps) {
+                    if(gerenciarAp == apartamento.getNumeroAp()){
+                      boolean segundoWhile = true;
+                      while(segundoWhile = true){
                       System.out.println("[1] ADD COLEGA");
-                      System.out.println("[2]");
-                      System.out.println("[3]");
-                      System.out.println("[4]");
+                      System.out.println("[2] ADD TAREFAS");
+                      System.out.println("[3] ADD CUSTO FIXO");
+                      System.out.println("[4] ADD CUSTO ADICIONAL");
                       System.out.println("[5] Sair");
                       int aplocal = input.nextInt();
                       
@@ -89,14 +101,14 @@ public class Main {
 
 
                           ColegasDeQuarto coleguaQuarto = new ColegasDeQuarto(escolhaNome, escolhaCell);
-                          e.addColegas(coleguaQuarto);
+                          apartamento.addColegas(coleguaQuarto);
                           
                           break;
                         case 2:
                         case 3:
                         case 4:
                         case 5:
-                        j = false;
+                        segundoWhile = false;
                         break;
                   }}
                 }

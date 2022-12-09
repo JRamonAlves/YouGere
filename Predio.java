@@ -11,16 +11,18 @@ public class Predio {
         predio.add(var);
     }
     public void exibirAps(){
-        int i = 1;
+        int contador = 1;
+        System.out.println("\n*** APARTAMENTOS CADASTRADOS NO PREDIO ***");
         for (Apartamento apartamento : predio) {
-            System.out.println("Nome ap:" + apartamento.getNome()+ "| Número do ap: "+ apartamento.getNumeroAp());
-            i++;
+            System.out.println("| NUMERO DO AP:" + apartamento.getNumeroAp()+ "\n| DESCRIÇÃO DO AP: "+ apartamento.getNome()+ "\n| ENDEREÇO: "+apartamento.getEndereco()+"\n");
+            contador++;
         }
     }
-    public void atualizarApartamento(Apartamento ap){
+    //public void atualizarApartamento(Apartamento ap){
 
-    }
-    public boolean verifica(){
+    
+    public boolean estaVazio(){
         return predio.isEmpty();
     }
 }
+
