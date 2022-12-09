@@ -189,7 +189,7 @@ public class Main {
                         
                         System.out.println("\n[CUSTO ADICIONAL CADASTRADO COM SUCESSO!]\n   tecle enter para voltar ao menu");
                         input.nextLine();
-                        String sairad = input.nextLine();
+                        String sair = input.nextLine();
                   
                       break;
                       
