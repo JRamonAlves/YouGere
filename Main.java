@@ -20,7 +20,7 @@ public class Main {
         int varEscolha1 = input.nextInt();
           
         // CONDIÇÃO CASO USUÁRIO DIGITE OPÇÃO [1]
-        if(varEscolha1 == 1){
+      if(varEscolha1 == 1){
 
           System.out.println("\n\nA opção escolhida: [1]\n(Criando apartamento...)\n---------------------------\n");
           System.out.println("*******  CRIANDO APARTAMENTO  *******");
@@ -44,10 +44,10 @@ public class Main {
           System.out.println(" \nApartamento criado com sucesso! Tecle ENTER PARA VOLTAR AO MENU");
           String retorno = input.nextLine();
           System.out.println("\n\n\n\n");
-        }
+      }
 
         // CONDIÇÃO CASO O USUÁRIO DIGITA A OPÇÃO [2]
-        else if(varEscolha1 == 2){
+      else if(varEscolha1 == 2){
         
         // SEGUNDO WHILE PARA EXIBIR UM SEGUNDO MENO PARA SAIR PARA O MENU PRINCIPAL OU CONFIRMAR VER APS
         // Esse while compara uma variável booleana para que possa ser quebrado e retorne ao menu principal.
@@ -174,17 +174,13 @@ public class Main {
                         
                         
                       } // Swich Case 
-                }
-                }
-            }
-          }
-          
-
-        }
-      }
-  
-      }
-    }
-  
-  }
-}
+                    } // Segundo Whille
+                  } // If Gerenciar ap - lin 81
+                } // for each
+              } //  Else if - lin 73
+            } // Primeiro While 
+        } // ver Apartamentos - lin 50
+      } // While Infinito 
+    } // Try Scanner
+  } // Public Static
+} // Main
