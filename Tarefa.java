@@ -5,12 +5,10 @@ public class Tarefa {
     private ColegasDeQuarto colega;
     private Apartamento apartamento;
 
-    public Tarefa(String nome_tarefa, String inicio_task, String prazo_task, Apartamento ap) {
+    public Tarefa(String nome_tarefa, String inicio_task, String prazo_task) {
         this.nome_tarefa = nome_tarefa;
         this.inicio_task = inicio_task;
         this.prazo_task = prazo_task;
-        this.apartamento = ap;  
-        ap.addTask(this);
     }
 
         //GETS E SETS PADRÕES

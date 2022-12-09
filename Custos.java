@@ -1,12 +1,12 @@
-abstract class Custos {
+class Custos {
     private String nomeCusto;
-    private int valorCusto;
-    private Apartamento Ap;
+    private double valorCusto;
+    
 
-    public Custos(String nomeCusto, int valorCusto, Apartamento Apartamento) {
+    public Custos(String nomeCusto, int valorCusto) {
         this.nomeCusto = nomeCusto;
         this.valorCusto = valorCusto;
-        this.Ap = Apartamento;
+        
     }
         
         //SET E GETS PADRÕES
@@ -14,12 +14,10 @@ abstract class Custos {
     public String getNomeCusto() {
         return nomeCusto;
     }
-    public int getValorCusto() {
+    public double getValorCusto() {
         return valorCusto;
     }
-    public Apartamento getAp() {
-        return Ap;
-    }
+  
 
     public void setNomeCusto(String nomeCusto) {
         this.nomeCusto = nomeCusto;
@@ -27,7 +25,5 @@ abstract class Custos {
     public void setValorCusto(int valorCusto) {
         this.valorCusto = valorCusto;
     }
-    public void setAp(Apartamento ap) {
-        this.Ap = ap;
-    }
+   
 }
