@@ -230,17 +230,22 @@ public class Apartamento {
 
         int i = 1; // Var aux para enumerar cada OBJ que será exibido
         
-        System.out.println("-------------------------------");
-        System.out.println("TAREFAS   -  PESSOA RESPONSÁVEL");
-        System.out.println("-------------------------------");
+        System.out.println("--------------------------------------");
+        System.out.println("TAREFAS  CADASTRADAS NO APARTAMENTO");
+        System.out.println("---------------------------------------");
 
         // EXIBE CADA DESPESA DA CLASSE TAREFAS COM UM FOR EACH
-        
-        for(Tarefa e: Tarefas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
-            System.out.println(i + "º " + e.getNome_tarefa() + " - " + e.getColega().getNome());
-            i+=1;
-        }  
-        System.out.println();
+        if(Tarefas.isEmpty()){
+            System.out.println("[NOTA] Não existe tarefas cadastradas.");
+        }
+
+        else{
+            for(Tarefa e: Tarefas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um.
+                System.out.println(i + "º " + e.getNome_tarefa() + " - " + e.getColega().getNome());
+                i+=1;
+            }  
+            System.out.println();
+        }
     }
 
 }

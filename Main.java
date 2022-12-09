@@ -88,8 +88,9 @@ public class Main {
                       System.out.println("[2] ADD TAREFAS");
                       System.out.println("[3] ADD CUSTO FIXO");
                       System.out.println("[4] ADD CUSTO ADICIONAL");
-                      System.out.println("[5] MOSTRAR MORADORES DO AP");
-                      System.out.println("[6] Sair");
+                      System.out.println("\n[5] MOSTRAR MORADORES DO AP");
+                      System.out.println("[6] MOSTRAR TAREFAS DO AP");
+                      System.out.println("[] Sair");
                       int aplocal = input.nextInt();
                       
                       
