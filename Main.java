@@ -105,7 +105,8 @@ public class Main {
                       System.out.println("[4] ADD CUSTO ADICIONAL");
                       System.out.println("[5] MOSTRAR MORADORES DO AP");
                       System.out.println("[6] MOSTRAR TAREFAS DO AP");
-                      System.out.println("[] Sair");
+                      System.out.println("[7] DISTRIBUIR TAREFAS");
+                      System.out.println("[8] Sair");
                       int aplocal = input.nextInt();
                       
                       
@@ -178,12 +179,13 @@ public class Main {
                           apartamento.addCustoFixo(custoFix);
   
                           System.out.println("\n[CUSTO FIXO CADASTRADO COM SUCESSO!]\n");
-  
+                          System.out.println("| tecle enter para voltar ao menu |");
                           input.nextLine();
 
-                        break;
+                          break;
   
                         case 4:
+                        
                           // DADOS TECLADO
                           System.out.println("| DIGITE AS INFOS PARA ADICIONAR UM CUSTO ADICIONAL |");
                       
@@ -198,21 +200,24 @@ public class Main {
                           apartamento.addCustoAdicional(custoAdic);
                           
                           System.out.println("\n[CUSTO ADICIONAL CADASTRADO COM SUCESSO!]\n");
-
+                          System.out.println("| tecle enter para voltar ao menu |");
                           input.nextLine();
-                    
-                        break;
+                          
+                          break;
                         
                         case 5:
   
                           if(apartamento.getColegas().isEmpty()){
                             System.out.println("\n(error) Não há colegas cadatrados.\n");
                             }
+
                           else if(apartamento.getColegas().isEmpty() == false){
                             apartamento.ExibirMoradores();
                             }
-                          
+
+                          System.out.println("\n| tecle enter para voltar ao menu |");
                           String sairmorador = input.nextLine();
+
                         break;
   
                         case 6:
@@ -225,8 +230,20 @@ public class Main {
                             }
                           
                             String sairTarefas = input.nextLine();
+                             System.out.println("\n[CUSTO ADICIONAL CADASTRADO COM SUCESSO!]\n");
+                          System.out.println("| tecle enter para voltar ao menu |");
+                          input.nextLine();
   
-                        break;
+                          break;
+
+                        case 7:
+                            apartamento.distribuiTarefas();
+                            System.out.println("\n[TAREFAS DISTRIBUIDAS COM SUCESSO!]\n");
+                            System.out.println("| tecle enter para voltar ao menu |");
+                            input.nextLine();
+                        case 8:
+                          segundoWhile = false;
+                          break;
                                                   
                         } // Swich Case 
                       }
