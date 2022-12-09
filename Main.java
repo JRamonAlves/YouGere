@@ -13,7 +13,7 @@ public class Main {
         System.out.println("\tBem-vindo ao YouGere");
         System.out.println("\n| O que deseja fazer? Digite o número correspondente:\n");
         System.out.println("[1] Criar um novo apartamento");
-        System.out.println("[2] Acessar apartamentos existentes\n[3] Sair");
+        System.out.println("[2] Gerenciar apartamentos\n[3] Sair");
         System.out.println("-------------------------------------------------------");
         
         // VARIÁVEL DE ESCOLHA DO MENU PRINCIPAL
@@ -55,7 +55,7 @@ public class Main {
         while(PrimeiroWhile == true){
 
           // MENSAGEM QUE EXIBE OPÇÕES DE ESCOLHA | Lucas: Optei em deixar em uma linha só para economizar tamanho de arquivo.
-          System.out.println("\nOPÇÃO ESCOLHIDA: (2)\n-------------------- \n[1] Ver apartamentos\n[2] Sair.  ");
+          System.out.println("\nOPÇÃO ESCOLHIDA: (2)\n-------------------- \n[1] VER APARTAMENTOS\n[2] SAIR.  ");
           int varEscolha2 = input.nextInt(); // var escolha em inteiro.
           
           // VERIFICA SE O ARRAY DE APARTAMENTOS ESTÁ VAZIO
