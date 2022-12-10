@@ -7,6 +7,4 @@ public class Teste_vitor {
         // JOptionPane.showMessageDialog(null, mensagem);
         // NÃO MEXER ****
         // nome = JOptionPane.showInputDialog("Bem-vindo ao YouGere\n| O que deseja fazer? Digite o número correspondente:\n[1] Criar um novo apartamento para gerenciar\n[2] Acessar algum apartamento existente");
-
- 
 }

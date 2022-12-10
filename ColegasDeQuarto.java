@@ -57,12 +57,6 @@ public class ColegasDeQuarto {
 
     }
 
-    public void deleteTarefas(Tarefa Tarefa) {
-
-        tarefas.remove(Tarefa);
-
-    }
-
     public void deleteTarefas(int index) {
 
         tarefas.remove(index);

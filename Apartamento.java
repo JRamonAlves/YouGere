@@ -166,7 +166,6 @@ public class Apartamento {
     }
     
     // Métodos particulares da classe "Apartamento"
-
     public void ExibirMoradores() {
 
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
@@ -175,7 +174,7 @@ public class Apartamento {
   
         for(ColegasDeQuarto morador: Colegas){ // Foreach - para cada obj dentro de colega de quarto me mostre cada um. 
 
-            System.out.println("["+i+"]\n| NOME DO COLEGA: "+ morador.getNome()+"\n| CONTATO: "+morador.getCelular()+"\n| CUSTOS: "+morador.getCustoAluno()+"\n"); // Mostra nome de cada colega de quarto cadastrado.
+            System.out.println("["+i+"]\n| NOME DO COLEGA: "+ morador.getNome()+"\n| CONTATO: "+morador.getCelular()+"\n| CUSTOS: R$"+morador.getCustoAluno()+"\n"); // Mostra nome de cada colega de quarto cadastrado.
             morador.ExibirTarefas();
             System.out.println("\n");
             i += 1;
