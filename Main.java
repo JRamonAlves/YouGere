@@ -66,6 +66,10 @@ public class Main {
               PrimeiroWhile = false;
             }
             // CASO O ARRAY DE APARTAMENTOS NÃO RETORNE TRUE, ENTRAMOS NO SEGUNDO ELSE IF
+
+            else if( varEscolha2 != 2 && varEscolha2 != 1){
+              System.out.println("[ERRO] Número inválido!");
+            }
             else{
 
               if(predio.estaVazio()){
