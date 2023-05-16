@@ -163,7 +163,7 @@ public class Main {
                           break;
   
                         case 3: // ADD CUSTO FIXO
-  
+                        
                           // DADOS TECLADO
                           System.out.println("| DIGITE AS INFOS PARA CADASTRAR UM CUSTO FIXO |\n");
                           
@@ -316,7 +316,7 @@ public class Main {
                                                   
                         } // Swich Case 
                       }
-                    }
+                    } // Segundo While 
                   } // If Gerenciar ap - lin 81
                 } // for each
               

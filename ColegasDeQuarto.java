@@ -42,7 +42,6 @@ public class ColegasDeQuarto {
     }
 
     // FUNÇÕES DO ARRAYLIST
-
     public ArrayList<Tarefa> getTarefas() {
         return tarefas;
     }
