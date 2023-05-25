@@ -7,17 +7,16 @@ public class Apartamento {
     private String nome;
     private String endereco;
     private int numeroAp;
-    
-    private ArrayList <ColegasDeQuarto> Colegas = new ArrayList< > ();  // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
-    private ArrayList <Custos> Custos = new ArrayList < > ();           // Lista com os custos do apartamento. 
-    private ArrayList <Tarefa> Tarefas = new ArrayList < > ();          // Lista com as tarefas do apartamento que precisam ser feitas.
 
-    private double DespesaFixa;                                         // Total das despesas fixas que a moradia possui.
-    private double DespesaAdicional;                                    // Total das despesas adicionais do mês, do periodo de tempo determinado.
+    private ArrayList <ColegasDeQuarto> Colegas = new ArrayList<>();        // O Arrays list do tipo ColegasDequarto recebe colegas, já instanciando a classe "ColegasDeQuarto" como  novo array.
+    private ArrayList <Custos> Custos = new ArrayList <>();                 // Lista com os custos do apartamento. 
+    private ArrayList <Tarefa> Tarefas = new ArrayList <>();                // Lista com as tarefas do apartamento que precisam ser feitas.
+
+    private double DespesaFixa;                                             // Total das despesas fixas que a moradia possui.
+    private double DespesaAdicional;                                        // Total das despesas adicionais do mês, do periodo de tempo determinado.
     private double DespesaTotal;
 
     //CONSTRUTORES
-
     Apartamento(String nome, String endereco, int numero){
         this.nome = nome;
         this.endereco = endereco;
@@ -30,12 +29,15 @@ public class Apartamento {
         DespesaAdicional = var;
         DespesaTotal = var;
     }
+
     public String getNome() {
         return nome;
     }
+
     public String getEndereco() {
         return endereco;
     }
+
     public int getNumeroAp() {
         return numeroAp;
     }
@@ -43,54 +45,60 @@ public class Apartamento {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+
     public void setNumeroAp(int telefone) {
         this.numeroAp = telefone;
     }
 
     //GETS DOS ATRIBUTOS 
-
     public double getDespesaTotal() {
         return this.DespesaTotal;
     }
+
     public double getDespesaFixa() {
         return DespesaFixa;
     }
+
     public double getDespesaAdicional() {
         return DespesaAdicional;
     }
 
     // GETS DOS ARRAYS
-
     public ArrayList<ColegasDeQuarto> getColegas() {
         return Colegas;
     }
+
     public ArrayList<Custos> getCustos() {
         return Custos;
     }
+
     public ArrayList<Tarefa> getTarefas() {
         return Tarefas;
     }
     
     // Métodos para gerenciamento dos Arrays
     // Colegas do Apartamento
-
     public void addColegas(ColegasDeQuarto colega) {
         Colegas.add(colega);    
-    }                           
+    }
+
     public void deleteColegas(ColegasDeQuarto colegas) {
         Colegas.remove(colegas);
     }
+
     public void deleteColegas(int index) {
         Colegas.remove(index);
     }
     
-        // Custos
+    // Custos
     public void setCustos(ArrayList<Custos> custos) {
         Custos = custos;
     }
+    
     public void addCustoFixo(Custos custo) {
         Custos.add(custo);      // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do arrey e para add um elemento a um array é necessário a funcão "array.add()
         
@@ -108,13 +116,13 @@ public class Apartamento {
     
     public void deleteCustos(Custos custos) {
         Custos.remove(custos);
-    }      
+    } 
+
     public void deleteCustos(int index) {
         Custos.remove(index);
     }
     
-        // Tarefas
-    
+    // Tarefas
     public void addTask(Tarefa task) {
                     
         Tarefas.add(task);  // Setando um Custo do tipo "Custos". Como se trata de um arrey o SET nesse caso funcionará usando funçõs do array e para add um elemento a um array é necessário a funcão "array.add()"
@@ -161,6 +169,7 @@ public class Apartamento {
     public void deleteTarefa(Tarefa tarefa) {
         Tarefas.remove(tarefa);
     }
+
     public void deleteTarefa(int index) {
         Tarefas.remove(index);
     }
@@ -182,6 +191,7 @@ public class Apartamento {
         System.out.println("\n\n");
 
     }
+
     public void ExibirCustos() {
 
         int i = 1; // Variável auxiliar para contagem do ciclo de repetições
@@ -221,6 +231,7 @@ public class Apartamento {
     public boolean estaVazioColegas(){
          return Colegas.isEmpty();
     }
+
     public void DivideCustos() {
         
         int qntdColegas = Colegas.size();
@@ -232,6 +243,7 @@ public class Apartamento {
         }
     
     }
+    
     public void ExibirTarefas() {
 
         int i = 1; // Var aux para enumerar cada OBJ que será exibido

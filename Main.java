@@ -73,13 +73,13 @@ public class Main {
             else{
 
               if(predio.estaVazio()){
+
                 // CASO ESTEJA VAZIO EXIBE MENSAGEM.
                 System.out.println("\n(ERRO) VOCÊ PRECISA CADASTRAR AO MENOS UM APARTAMENTO!");
                 System.out.println();
                 System.out.println();
   
                 // QUEBRA O PRIMEIRO WHILE E RETORNA AO MENU PRINCIPAL.
-                
                 PrimeiroWhile = false;
               
               }else{
@@ -103,11 +103,11 @@ public class Main {
                       System.out.println("[02] ADD TAREFAS");
                       System.out.println("[03] ADD CUSTO FIXO");
                       System.out.println("[04] ADD CUSTO ADICIONAL");
-                    System.out.println("\n[05] MOSTRAR MORADORES DO AP");
+                      System.out.println("\n[05] MOSTRAR MORADORES DO AP");
                       System.out.println("[06] MOSTRAR TAREFAS DO AP");
-                    System.out.println("\n[07] DISTRIBUIR TAREFAS");
+                      System.out.println("\n[07] DISTRIBUIR TAREFAS");
                       System.out.println("[08] DISTRIBUIR CUSTOS");
-                    System.out.println("\n[09] DELETAR COLEGA");
+                      System.out.println("\n[09] DELETAR COLEGA");
                       System.out.println("[10] DELETAR TAREFAS");
                       System.out.println("[11] ZERAR CUSTOS");
                       System.out.println("[12] Sair");
