@@ -1,3 +1,3 @@
 # YouGere
-Aplicativo de divisão de contas e gerenciamento de gastos
+Projeto de divisão de gastos em JAVA
 Lucas Félix, Ramon, Vitor Juvino, Matheus Virgolino.
